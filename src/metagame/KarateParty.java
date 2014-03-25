@@ -1,5 +1,9 @@
 package metagame;
 
+import main.SuperComponent;
+import ninjaSnake.NinjaSnake;
+import ninjaSnake.SnakeComponent;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
@@ -8,13 +12,18 @@ import java.awt.event.ActionEvent;
  */
 public class KarateParty {
     private JFrame frame;
-    private KarateKomponent komponent;
+    private SuperComponent komponent;
 
     private Board board;
     private KarateKlass karateKlass;
     private Timer timer;
     private Action tick;
     private Action space;
+
+    private boolean meta;
+
+    private MiniGame minigame;
+    private SuperComponent minigameComponent;
 
     public KarateParty() {
         createBoard();
@@ -24,6 +33,9 @@ public class KarateParty {
         createActions();
         createTimer();
         createKeybinds();
+
+        this.meta = true;
+
     }
 
     private void createBoard(){
@@ -37,10 +49,21 @@ public class KarateParty {
 
     private void createComponent(){
         this.komponent = new KarateKomponent(this.board, this.karateKlass);
+        this.minigameComponent = new SnakeComponent();
+        this.minigame = new NinjaSnake();
+
         karateKlass.addBoardListener(komponent);
+        minigame.addBoardListener(minigameComponent);
+
+        frame.add(minigameComponent);
         frame.add(komponent);
+
         komponent.setPreferredSize(komponent.getPreferredSize());
+        minigameComponent.setPreferredSize(komponent.getPreferredSize());
+
         frame.pack();
+
+
     }
 
     private void createKarateKlass(){
@@ -56,7 +79,16 @@ public class KarateParty {
     private void createActions(){
         this.tick = new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                karateKlass.tick();
+                if(meta){
+                    if(karateKlass.tick()){
+                        meta = false;
+                        karateKlass.removeBoardListener(komponent);
+                        karateKlass.addBoardListener(minigameComponent);
+
+                    }
+                } else {
+                    if(minigame.tick()){meta = true;}
+                }
             }
         };
 

@@ -1,5 +1,6 @@
 package metagame;
 
+import main.SuperComponent;
 import sun.security.krb5.KrbAsReqBuilder;
 
 import javax.swing.*;
@@ -10,24 +11,13 @@ import java.util.HashMap;
 /**
  * Created by the karatekidz on 24/03/14.
  */
-public class KarateKomponent extends JComponent implements BoardListener{
+public class KarateKomponent extends SuperComponent{
     private Board board;
     private KarateKlass karateKlass;
-    private final int tileSize;
-    private EnumMap<SquareType, Color> colorMap;
-    private HashMap<Integer, Color> playerColorMap;
-    private final Font myFont;
 
     public KarateKomponent(Board board, KarateKlass karateKlass) {
         this.board = board;
-        this.tileSize = 80;
-        createEnumMap();
-        createHashMap();
-        this.setBackground(Color.BLACK);
-        myFont = new Font("Arial", Font.BOLD,30);
         this.karateKlass = karateKlass;
-
-
     }
 
     public Dimension getPreferredSize(){
@@ -36,24 +26,11 @@ public class KarateKomponent extends JComponent implements BoardListener{
         return new Dimension(xsize,ysize);
     }
 
-    private void createEnumMap(){
-        colorMap = new EnumMap<>(SquareType.class);
-        colorMap.put(SquareType.GOOD, Color.BLUE);
-        colorMap.put(SquareType.BAD, Color.RED);
-        colorMap.put(SquareType.KRYSTAL, Color.CYAN);
-        colorMap.put(SquareType.KARATEKID, Color.GREEN);
-    }
-
-    private void createHashMap(){
-        playerColorMap = new HashMap<>();
-        playerColorMap.put(0,Color.YELLOW);
-        playerColorMap.put(1, Color.GREEN);
-    }
-
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         final Graphics2D g2d = (Graphics2D) g;
+
 
         g2d.setColor(Color.BLACK);
         g2d.fillRect(0,0,tileSize*board.getSize(),tileSize*board.getSize());
@@ -70,10 +47,6 @@ public class KarateKomponent extends JComponent implements BoardListener{
             g2d.drawOval(((board.getSize()*tileSize-radius)/2)+ x, ((board.getSize()*tileSize-radius)/2) + y, radius, radius);
 
         }
-
-
-
-
 
         //Draw player stuff
 
@@ -97,10 +70,5 @@ public class KarateKomponent extends JComponent implements BoardListener{
 
 
 
-    }
-
-    @Override
-    public void boardChanged() {
-        repaint();
     }
 }

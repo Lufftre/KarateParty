@@ -48,16 +48,11 @@ public class KarateKlass {
         roll = true;
     }
 
-    public void tick(){
-        switch(phase){
-            case 1:
-                phase1();
-            case 2:
-                phase2();
-        }
+    public boolean tick(){
+        if(phase1()) return true; else return false;
     }
 
-    private void phase1(){
+    private boolean phase1(){
         if(!roll){
             dice_val = random.nextInt(12);
             notifyListeners();
@@ -69,18 +64,24 @@ public class KarateKlass {
             if(dice_val == 0){
                 currentPlayer++;
                 roll = false;
-                if(currentPlayer == board.getPlayers().size()) phase++;
+                if(currentPlayer == board.getPlayers().size()) return true;
             }
         }
+        return false;
 
     }
 
     private void phase2(){
 
+
     }
 
     public void addBoardListener(BoardListener bl){
         listeners.add(bl);
+    }
+
+    public void removeBoardListener(BoardListener bl){
+        listeners.remove(bl);
     }
 
     private void notifyListeners(){
@@ -91,4 +92,7 @@ public class KarateKlass {
         }
     }
 
+    public List<BoardListener> getListeners() {
+        return listeners;
+    }
 }

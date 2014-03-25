@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3be05e89-6fcc-46cd-bbd1-4a815263a430" name="Default" comment="" />
+    <list default="true" id="3be05e89-6fcc-46cd-bbd1-4a815263a430" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/SuperComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metagame/KarateKlass.java" afterPath="$PROJECT_DIR$/src/metagame/KarateKlass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metagame/KarateKomponent.java" afterPath="$PROJECT_DIR$/src/metagame/KarateKomponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KarateParty.ipr" afterPath="$PROJECT_DIR$/KarateParty.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KarateParty.iws" afterPath="$PROJECT_DIR$/KarateParty.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metagame/KarateParty.java" afterPath="$PROJECT_DIR$/src/metagame/KarateParty.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metagame/MiniGame.java" afterPath="$PROJECT_DIR$/src/metagame/MiniGame.java" />
+    </list>
     <ignored path="KarateParty.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,46 +72,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/metagame/Player.java">
+      <file leaf-file-name="NinjaSnake.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ninjaSnake/NinjaSnake.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="21" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/metagame/Board.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="69" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="570">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KarateKlass.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/metagame/KarateKlass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="0" selection-start="1552" selection-end="1552" vertical-scroll-proportion="0.0" vertical-offset="925" max-vertical-offset="1500">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MiniGame.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/metagame/MiniGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="17" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="210">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ninjaSnake.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ninjaSnake/ninjaSnake.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="4" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+            <state line="63" column="5" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" vertical-offset="550" max-vertical-offset="1065">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,50 +83,68 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ninjaSnake/Player.java">
+      <file leaf-file-name="KarateKlass.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/metagame/KarateKlass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="5" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+            <state line="87" column="47" selection-start="1782" selection-end="1782" vertical-scroll-proportion="0.0" vertical-offset="895" max-vertical-offset="1410">
               <folding>
-                <element signature="e#577#578#0" expanded="true" />
-                <element signature="e#605#606#0" expanded="true" />
+                <element signature="e#1956#1957#0" expanded="true" />
+                <element signature="e#1988#1989#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoardListener.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/metagame/BoardListener.java">
+      <file leaf-file-name="MiniGame.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/metagame/MiniGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="31" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="210">
+            <state line="11" column="51" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KarateKomponent.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/metagame/KarateKomponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="82" selection-start="2775" selection-end="2775" vertical-scroll-proportion="0.5855263" vertical-offset="1008" max-vertical-offset="1605">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KarateParty.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="KarateParty.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/metagame/KarateParty.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="34" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1260">
+            <state line="63" column="21" selection-start="1518" selection-end="1518" vertical-scroll-proportion="-0.61585367" vertical-offset="1173" max-vertical-offset="1665">
+              <folding>
+                <element signature="e#1826#2298#0" expanded="true" />
+                <element signature="e#2287#2288#0" expanded="true" />
+                <element signature="e#2322#2462#0" expanded="true" />
+                <element signature="e#2451#2452#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SnakeComponent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ninjaSnake/SnakeComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="41" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="510">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KarateKomponent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/metagame/KarateKomponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1110">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SquareType.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/metagame/SquareType.java">
+      <file leaf-file-name="SuperComponent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/SuperComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="33" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-              <folding />
+            <state line="41" column="32" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="780">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,6 +155,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -179,18 +172,24 @@
         <option value="$PROJECT_DIR$/src/KarateParty.java" />
         <option value="$PROJECT_DIR$/src/KarateKomponent.java" />
         <option value="$PROJECT_DIR$/src/MiniGame.java" />
-        <option value="$PROJECT_DIR$/src/metagame/MiniGame.java" />
         <option value="$PROJECT_DIR$/src/ninjaSnake/Board.java" />
         <option value="$PROJECT_DIR$/src/ninjaSnake/Player.java" />
         <option value="$PROJECT_DIR$/src/ninjaSnake/ninjaSnake.java" />
+        <option value="$PROJECT_DIR$/src/ninjaSnake/snakeComponent.java" />
+        <option value="$PROJECT_DIR$/src/metagame/KarateKlass.java" />
         <option value="$PROJECT_DIR$/src/metagame/KarateKomponent.java" />
+        <option value="$PROJECT_DIR$/src/ninjaSnake/NinjaSnake.java" />
+        <option value="$PROJECT_DIR$/src/metagame/MiniGame.java" />
+        <option value="$PROJECT_DIR$/src/ninjaSnake/SnakeComponent.java" />
+        <option value="$PROJECT_DIR$/src/main/SuperComponent.java" />
+        <option value="$PROJECT_DIR$/src/metagame/KarateParty.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="51" />
     <option name="y" value="22" />
-    <option name="width" value="1039" />
+    <option name="width" value="1389" />
     <option name="height" value="878" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -218,14 +217,14 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -297,6 +296,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="metagame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KarateParty" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KarateParty" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -550,8 +567,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="22" width="1039" height="878" extended-state="6" />
-    <editor active="false" />
+    <frame x="51" y="22" width="1389" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -560,7 +577,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880098" sideWeight="0.50035995" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -569,8 +586,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.333975" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32880098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24982001" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32880098" sideWeight="0.49964002" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -627,7 +644,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ninjaSnake/ninjaSnake.java">
+    <entry file="file://$PROJECT_DIR$/src/ninjaSnake/NinjaSnake.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="13" selection-start="778" selection-end="778" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="690">
           <folding>
@@ -663,6 +680,18 @@
     <entry file="file://$PROJECT_DIR$/src/metagame/KarateParty.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="34" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1260">
+          <folding>
+            <element signature="e#1826#2298#0" expanded="true" />
+            <element signature="e#2287#2288#0" expanded="true" />
+            <element signature="e#2322#2462#0" expanded="true" />
+            <element signature="e#2451#2452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/metagame/SquareType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="33" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="225">
           <folding />
         </state>
       </provider>
@@ -681,40 +710,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/metagame/KarateParty.java">
+    <entry file="file://$PROJECT_DIR$/src/metagame/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="34" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/metagame/KarateKlass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="1552" selection-end="1552" vertical-scroll-proportion="0.0" vertical-offset="925" max-vertical-offset="1500">
+        <state line="69" column="21" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metagame/BoardListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="31" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+        <state line="6" column="31" selection-start="133" selection-end="133" vertical-scroll-proportion="0.18292683" vertical-offset="0" max-vertical-offset="492">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/metagame/MiniGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ninjaSnake/ninjaSnake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="4" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,24 +734,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/metagame/SquareType.java">
+    <entry file="file://$PROJECT_DIR$/src/ninjaSnake/NinjaSnake.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="33" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="225">
-          <folding />
+        <state line="63" column="5" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="1065">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/metagame/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/metagame/KarateKlass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="21" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-          <folding />
+        <state line="87" column="47" selection-start="1782" selection-end="1782" vertical-scroll-proportion="0.0" vertical-offset="895" max-vertical-offset="1410">
+          <folding>
+            <element signature="e#1956#1957#0" expanded="true" />
+            <element signature="e#1988#1989#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metagame/KarateKomponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="82" selection-start="2775" selection-end="2775" vertical-scroll-proportion="0.5855263" vertical-offset="1008" max-vertical-offset="1605">
+        <state line="32" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1110">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ninjaSnake/SnakeComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="41" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="510">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/metagame/MiniGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="51" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/SuperComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="32" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="780">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/metagame/KarateParty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="21" selection-start="1518" selection-end="1518" vertical-scroll-proportion="-0.61585367" vertical-offset="1173" max-vertical-offset="1665">
+          <folding>
+            <element signature="e#1826#2298#0" expanded="true" />
+            <element signature="e#2287#2288#0" expanded="true" />
+            <element signature="e#2322#2462#0" expanded="true" />
+            <element signature="e#2451#2452#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
