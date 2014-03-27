@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3be05e89-6fcc-46cd-bbd1-4a815263a430" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpRmk/AbstractMinigame.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/SuperComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metagame/Board.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metagame/BoardListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metagame/KarateKlass.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metagame/KarateKomponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metagame/KarateParty.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metagame/MiniGame.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metagame/Player.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metagame/SquareType.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ninjaSnake/Player.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ninjaSnake/ninjaSnake.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java" afterPath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KarateParty.iws" afterPath="$PROJECT_DIR$/KarateParty.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/KarateParty.java" afterPath="$PROJECT_DIR$/src/kpRmk/KarateParty.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/Minigame.java" afterPath="$PROJECT_DIR$/src/kpRmk/Minigame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/metagame/PaintComponent.java" afterPath="$PROJECT_DIR$/src/kpRmk/metagame/PaintComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java" afterPath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java" afterPath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java" />
     </list>
     <ignored path="KarateParty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -577,7 +559,11 @@
       <created>1395923173863</created>
       <updated>1395923173863</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=" rmk&#10;">
+      <created>1395958036278</created>
+      <updated>1395958036278</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
