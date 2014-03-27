@@ -85,6 +85,7 @@ public class KarateParty {
                         karateKlass.removeBoardListener(komponent);
                         karateKlass.addBoardListener(minigameComponent);
 
+
                     }
                 } else {
                     if(minigame.tick()){meta = true;}

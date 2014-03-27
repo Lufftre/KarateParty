@@ -10,4 +10,5 @@ public interface MiniGame {
     public boolean tick();
 
     public void addBoardListener(BoardListener bl);
+
 }
