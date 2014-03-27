@@ -1,17 +1,37 @@
 package kpRmk.metagame;
 
 import kpRmk.AbstractComponent;
+
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  * Created by the karatekidz on 26/03/14.
  */
 public class PaintComponent extends AbstractComponent {
     private Board board;
+    private Action space;
 
     public PaintComponent(Board b){
         this.board = b;
+	createActions();
+	createKeybinds();
     }
+
+    private void createKeybinds(){
+        this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "spacePress");
+        this.getActionMap().put("spacePress", this.space);
+    }
+
+    private void createActions(){
+        this.space = new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                board.spacePress();
+            }
+        };
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         final Graphics2D g2d = (Graphics2D) g;

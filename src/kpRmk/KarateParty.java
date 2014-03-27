@@ -16,10 +16,9 @@ public class KarateParty {
     private AbstractComponent miniComponent;
 
     private Board metaBoard;
-    private Minigame miniBoard;
+    private AbstractMinigame miniBoard;
     private Timer timer;
     private Action tick;
-    private Action space;
 
     private boolean meta;
 
@@ -29,8 +28,6 @@ public class KarateParty {
         createMetaComponent();
         createActions();
         createTimer();
-        createKeybinds();
-
         this.meta = true;
 
     }
@@ -59,13 +56,13 @@ public class KarateParty {
         miniComponent.setPreferredSize(miniComponent.getPreferredSize(metaBoard.getSize()));
         frame.pack();
     }
-    private void setMiniBoard(Minigame minigame){
+    private void setMiniBoard(AbstractMinigame minigame){
         this.miniBoard = minigame;
     }
 
 
     private void createTimer(){
-        this.timer = new Timer(200, this.tick);
+        this.timer = new Timer(60, this.tick);
         timer.setCoalesce(true);
         timer.start();
     }
@@ -86,17 +83,6 @@ public class KarateParty {
                 }
             }
         };
-
-        this.space = new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                metaBoard.spacePress();
-            }
-        };
-    }
-
-    private void createKeybinds(){
-        metaComponent.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "spacePress");
-        metaComponent.getActionMap().put("spacePress", this.space);
     }
 
     public static void main(String[] args) {
