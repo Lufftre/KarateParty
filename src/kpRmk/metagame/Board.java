@@ -19,7 +19,7 @@ public class Board {
     private int diceVal;
 
     public Board(int nPlayers) {
-        this.size = 12;
+        this.size = 50;
         this.random = new Random();
         players = new ArrayList<>();
         addPlayers(nPlayers);

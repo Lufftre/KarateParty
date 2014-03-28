@@ -111,14 +111,14 @@ board.dRelease();
 
         for (Player player : board.getPlayers()) {
 	    g2d.setColor(playerColorMap.get(player.getNumber()));
-            g2d.fillRect((int) player.getX(), (int) player.getY(), size, size);
+            g2d.fillOval((int) player.getX(), (int) player.getY(), size, size);
         }
 
 	g2d.setColor(Color.GRAY);
 	for (int x = 0; x < board.getWidth(); x++) {
 	    for (int y = 0; y < board.getHeight(); y++) {
 		if(board.getMapPoint(new Position(x,y))){
-		    g2d.fillRect(x, y, size, size);
+		    g2d.fillOval(x, y, size, size);
 		}
 	    }
 	      

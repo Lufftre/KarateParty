@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3be05e89-6fcc-46cd-bbd1-4a815263a430" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpRmk/Position.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/AbstractComponent.java" afterPath="$PROJECT_DIR$/src/kpRmk/AbstractComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/AbstractMinigame.java" afterPath="$PROJECT_DIR$/src/kpRmk/AbstractMinigame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/metagame/Board.java" afterPath="$PROJECT_DIR$/src/kpRmk/metagame/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java" afterPath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KarateParty.iws" afterPath="$PROJECT_DIR$/KarateParty.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/KarateParty.java" afterPath="$PROJECT_DIR$/src/kpRmk/KarateParty.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/metagame/PaintComponent.java" afterPath="$PROJECT_DIR$/src/kpRmk/metagame/PaintComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java" afterPath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/metagame/Player.java" afterPath="$PROJECT_DIR$/src/kpRmk/metagame/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java" afterPath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java" />
     </list>
     <ignored path="KarateParty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,6 +79,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="KarateParty.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kpRmk/KarateParty.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="21" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -105,16 +108,16 @@
       <file leaf-file-name="PaintComponent.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="1470">
+            <state line="124" column="5" selection-start="3730" selection-end="3730" vertical-scroll-proportion="0.0" vertical-offset="858" max-vertical-offset="1470">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PaintComponent.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PaintComponent.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/PaintComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="9" selection-start="2183" selection-end="2183" vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1275">
+            <state line="64" column="86" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.4207317" vertical-offset="753" max-vertical-offset="1245">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#668#807#0" expanded="true" />
@@ -127,7 +130,7 @@
       <file leaf-file-name="AbstractComponent.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/AbstractComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="31" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+            <state line="34" column="38" selection-start="880" selection-end="880" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="735">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,10 +147,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="39" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.71747965" vertical-offset="457" max-vertical-offset="1275">
+            <state line="21" column="22" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="1275">
               <folding />
             </state>
           </provider>
@@ -219,14 +222,14 @@
         <option value="$PROJECT_DIR$/KarateParty.iws" />
         <option value="$PROJECT_DIR$/src/kpRmk/Position.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java" />
-        <option value="$PROJECT_DIR$/src/kpRmk/AbstractComponent.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/AbstractMinigame.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java" />
-        <option value="$PROJECT_DIR$/src/kpRmk/KarateParty.java" />
-        <option value="$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java" />
-        <option value="$PROJECT_DIR$/src/kpRmk/metagame/PaintComponent.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/metagame/Player.java" />
+        <option value="$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java" />
+        <option value="$PROJECT_DIR$/src/kpRmk/KarateParty.java" />
+        <option value="$PROJECT_DIR$/src/kpRmk/AbstractComponent.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/metagame/Board.java" />
+        <option value="$PROJECT_DIR$/src/kpRmk/metagame/PaintComponent.java" />
       </list>
     </option>
   </component>
@@ -605,7 +608,11 @@
       <created>1395958219490</created>
       <updated>1395958219490</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="+Position Class&#10;&#10;Metagame:&#10;+Handle winner + new round&#10;&#10;NinjaSnake:&#10;+Improved collision&#10;+Handle winner">
+      <created>1395970308224</created>
+      <updated>1395970308224</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -659,7 +666,8 @@
     <MESSAGE value=" rmk" />
     <MESSAGE value=" rmk&#10;" />
     <MESSAGE value="+AbstractMinigame&#10;Changed timer tick rate&#10;&#10;NinjaSnake:&#10;+keybindings 2players&#10;+glitchy collision&#10;+trail" />
-    <option name="LAST_COMMIT_MESSAGE" value="+AbstractMinigame&#10;Changed timer tick rate&#10;&#10;NinjaSnake:&#10;+keybindings 2players&#10;+glitchy collision&#10;+trail" />
+    <MESSAGE value="+Position Class&#10;&#10;Metagame:&#10;+Handle winner + new round&#10;&#10;NinjaSnake:&#10;+Improved collision&#10;+Handle winner" />
+    <option name="LAST_COMMIT_MESSAGE" value="+Position Class&#10;&#10;Metagame:&#10;+Handle winner + new round&#10;&#10;NinjaSnake:&#10;+Improved collision&#10;+Handle winner" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -755,15 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/AbstractComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="31" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpRmk/AbstractPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="25" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
@@ -802,35 +801,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/KarateParty.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="1906" selection-end="1906" vertical-scroll-proportion="0.0" vertical-offset="772" max-vertical-offset="1530">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="1470">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/src.zip!/javax/swing/JComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4312" column="15" selection-start="162810" selection-end="162810" vertical-scroll-proportion="0.80167013" vertical-offset="63111" max-vertical-offset="82590">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/PaintComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="9" selection-start="2183" selection-end="2183" vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1275">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#668#807#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -844,10 +818,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="5" selection-start="3730" selection-end="3730" vertical-scroll-proportion="0.0" vertical-offset="858" max-vertical-offset="1470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/KarateParty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="21" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.0" vertical-offset="367" max-vertical-offset="1530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/AbstractComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="38" selection-start="880" selection-end="880" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="735">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="39" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.71747965" vertical-offset="457" max-vertical-offset="1275">
+        <state line="21" column="22" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="1275">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/PaintComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="86" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.4207317" vertical-offset="753" max-vertical-offset="1245">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#668#807#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

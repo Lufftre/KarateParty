@@ -27,9 +27,12 @@ public abstract class AbstractComponent extends JComponent{
     }
 
     public Dimension getPreferredSize(int i){
+        /*
         int xsize = i*tileSize + 100;
         int ysize = i*tileSize;
         return new Dimension(xsize,ysize);
+        */
+        return new Dimension(1060, 800);
     }
 
     protected abstract void paintComponent(Graphics g);

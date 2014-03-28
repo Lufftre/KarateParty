@@ -38,18 +38,19 @@ public class PaintComponent extends AbstractComponent {
         final Graphics2D g2d = (Graphics2D) g;
 
         g2d.setColor(Color.BLACK);
-        g2d.fillRect(0,0,tileSize*board.getSize(),tileSize*board.getSize());
+        g2d.fillRect(0,0,800,800);
         //Draw board
         double radians = 2*Math.PI / board.getSize();
-        int radius = 100;
+        int radiusBig = (int)((800/2) - (((800/2)*Math.PI)/board.getSize()));
+        int radiusSmall = (int)((radiusBig*Math.PI)/board.getSize());
         for (int i = 0; i < board.getSize(); i++) {
 
-            int x = (int)(Math.cos(radians*i) * radius*2);
-            int y = (int)(Math.sin(radians*i) * radius*2);
+            int x = (int)(Math.cos(radians*i) * radiusBig);
+            int y = (int)(Math.sin(radians*i) * radiusBig);
 
 
             g2d.setColor(Color.WHITE);
-            g2d.drawOval(((board.getSize()*tileSize-radius)/2)+ x, ((board.getSize()*tileSize-radius)/2) + y, radius, radius);
+            g2d.drawOval(x + ((800/2)-radiusSmall), y + ((800/2)-radiusSmall), radiusSmall*2, radiusSmall*2);
 
         }
 
@@ -59,12 +60,9 @@ public class PaintComponent extends AbstractComponent {
         for (Player player : board.getPlayers()) {
             //Draw Player
             g2d.setColor(Color.GREEN);
-            int x = (int)(Math.cos(radians*player.getSteps()) * radius*2);
-            int y = (int)(Math.sin(radians*player.getSteps()) * radius*2);
-            g2d.fillRect(
-                    ((board.getSize()*tileSize)/2)+ x,
-                    ((board.getSize()*tileSize)/2) + y + 10*player.getNumber(),
-                    20, 20);
+            int x = (int)(Math.cos(radians*player.getSteps()) * radiusBig);
+            int y = (int)(Math.sin(radians*player.getSteps()) * radiusBig);
+            g2d.fillRect(x + ((800/2)-radiusSmall) + 10,y + ((800/2)-radiusSmall) + 10,20,20);
             //Draw Score
             g2d.setColor(Color.RED);
             g2d.drawString(String.valueOf(player.getKoins()),getWidth()-100 ,100*(1+player.getNumber()));
