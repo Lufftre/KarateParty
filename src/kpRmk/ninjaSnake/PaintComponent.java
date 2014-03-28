@@ -3,6 +3,7 @@ package kpRmk.ninjaSnake;
 import kpRmk.AbstractComponent;
 import kpRmk.AbstractMinigame;
 import kpRmk.Minigame;
+import kpRmk.Position;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,10 +28,10 @@ public class PaintComponent extends AbstractComponent {
 
     public PaintComponent(AbstractMinigame board) {
         this.board = board;
-
-	createActions();
-	createKeybinds();
+        createActions();
+        createKeybinds();
     }
+
 
     private void createKeybinds(){
 	//Left
@@ -105,18 +106,19 @@ board.dRelease();
     @Override
     public void paintComponent(Graphics g){
         final Graphics2D g2d = (Graphics2D) g;
+        int size = 10;
 
 
         for (Player player : board.getPlayers()) {
 	    g2d.setColor(playerColorMap.get(player.getNumber()));
-            g2d.fillOval(player.getX(), player.getY(), 10, 10);
+            g2d.fillRect((int) player.getX(), (int) player.getY(), size, size);
         }
 
 	g2d.setColor(Color.GRAY);
 	for (int x = 0; x < board.getWidth(); x++) {
 	    for (int y = 0; y < board.getHeight(); y++) {
-		if(board.getMapPoint(x,y)){
-		    g2d.fillOval(x, y, 10, 10);
+		if(board.getMapPoint(new Position(x,y))){
+		    g2d.fillRect(x, y, size, size);
 		}
 	    }
 	      

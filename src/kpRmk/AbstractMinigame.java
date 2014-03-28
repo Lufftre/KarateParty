@@ -8,13 +8,13 @@ import java.util.ArrayList;
  * Created by ludno249 on 2014-03-27.
  */
 public abstract class AbstractMinigame{
-    public abstract boolean tick(AbstractComponent component);
+    public abstract int tick(AbstractComponent component);
     public abstract ArrayList<Player> getPlayers();
 
     public abstract int getWidth();
     public abstract int getHeight();
     public abstract boolean[][] getMap();
-    public abstract boolean getMapPoint(int x, int y);
+    public abstract boolean getMapPoint(Position position);
 
     public abstract void leftPress();
     public abstract void leftRelease();

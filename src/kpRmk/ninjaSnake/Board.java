@@ -3,7 +3,9 @@ package kpRmk.ninjaSnake;
 import kpRmk.AbstractComponent;
 import kpRmk.AbstractMinigame;
 import kpRmk.Minigame;
+import kpRmk.Position;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -15,6 +17,7 @@ public class Board extends AbstractMinigame
     private int height,width;
     private boolean[][] map;
     private ArrayList<Player> players;
+    private int winner;
 
     public Board() {
         this.height = 1000;
@@ -23,6 +26,7 @@ public class Board extends AbstractMinigame
         this.players = new ArrayList<>();
         players.add(new Player(0));
         players.add(new Player(1));
+        this.winner = -1;
 
     }
 
@@ -42,8 +46,12 @@ public class Board extends AbstractMinigame
 	return map;
     }
 
-    public boolean getMapPoint(int x, int y){
-	return map[x][y];
+    public boolean getMapPoint(Position position){
+        if((int)position.getX()>=0 && (int)position.getX()<width &&
+           (int)position.getY()>=0 && (int)position.getY()<height){
+	        return map[(int)position.getX()][(int)position.getY()];
+        }
+        return true;
     }
 
     public void leftPress(){
@@ -78,25 +86,56 @@ public class Board extends AbstractMinigame
 	}
     }
 
-    private boolean checkCollide(int x, int y){
-	if(x>=0 && x<width && y>=0 && y<height){
-		return getMapPoint(x,y);
-	}
-	return true;
+    private boolean checkCollide(Player player){
+        //int x = (int)(player.getX() + xOffset);
+        //int y = (int)(player.getY() + yOffset);
+        double x = player.getX();
+        double y = player.getY();
+
+        if(x>=0 && x<width && y>=0 && y<height){
+            //return getMapPoint(x,y);
+            for (Position position : getCollidePoints(x, y, player.getAngle())) {
+                if(getMapPoint(position)) return true;
+            }
+            return false;
+	    }
+	    return true;
+    }
+
+    private ArrayList<Position> getCollidePoints(double x, double y, double angle){
+        ArrayList<Position> positions = new ArrayList<>();
+        double a = Math.PI/39;
+        for (int i = -20; i < 20; i++) {
+            double xTemp = (Math.cos((a*i) + angle)*10) + x;
+            double yTemp = (Math.sin((a * i) + angle)*10) + y;
+            positions.add(new Position(xTemp,yTemp));
+        }
+        return positions;
     }
 
     private void killPlayer(Player player){
 	player.setAlive(false);
     }
+    private void checkWinner(){
+        int n = 0;
+        int winnerTemp = -1;
+        for (Player player : players) {
+            if(player.isAlive()){
+                n++;
+                winnerTemp = player.getNumber();
+            }
+        }
+        if(n==1) winner = winnerTemp;
+    }
 
     @Override
-    public boolean tick(AbstractComponent component) {
+    public int tick(AbstractComponent component) {
 	for (Player player : players) {
             playerTick(player);
         }
         component.boardChanged();
 
-        return false;
+        return winner;
     }
 
     private void playerTick(Player player){
@@ -106,18 +145,19 @@ public class Board extends AbstractMinigame
 	    if(player.isRight()) player.rotateRight();
 
 	    //Leave trail
-	    setMapPoint(player.getX(),player.getY());
+	    setMapPoint((int)player.getX(),(int)player.getY());
 
-	    int x = (int)(Math.cos(player.getAngle())*5);
-	    int y = (int)(Math.sin(player.getAngle())*5);
+	    double x = (Math.cos(player.getAngle())*5);
+	    double y = (Math.sin(player.getAngle())*5);
 	    //Check collision
-	    if(checkCollide(x + player.getX(),y + player.getY())){
-		killPlayer(player);
-	    } else {
+	    if(checkCollide(player)){
+		    killPlayer(player);
+            checkWinner();
+	    } //else {
 		//Move Snake
 		player.moveX(x);
 		player.moveY(y);
-	    }
+	    //}
 	}
 
     }

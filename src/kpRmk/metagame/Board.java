@@ -1,5 +1,7 @@
 package kpRmk.metagame;
 
+import kpRmk.AbstractPlayer;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -58,6 +60,13 @@ public class Board {
 
     public void spacePress(){
         roll = true;
+    }
+
+    public void newRound(int playerNumber){
+        for (Player player : players) {
+            if(player.getNumber() == playerNumber){ player.addKoins(10);break;}
+        }
+        currentPlayer = 0;
     }
 
     public boolean tick(PaintComponent component){

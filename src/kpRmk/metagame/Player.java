@@ -55,6 +55,10 @@ public class Player {
         this.krystals = krystals;
     }
 
+    public void addKoins(int koins){
+        this.koins += koins;
+    }
+
     public void playerMove(){
         this.steps++;
     }

@@ -22,6 +22,8 @@ public class KarateParty {
 
     private boolean meta;
 
+    private int miniWinner;
+
     public KarateParty() {
         createFrame();
         createBoard();
@@ -60,6 +62,14 @@ public class KarateParty {
         this.miniBoard = minigame;
     }
 
+    private void setMetaComponent(){
+        frame.remove(miniComponent);
+        frame.add(metaComponent);
+
+        metaComponent.setPreferredSize(metaComponent.getPreferredSize(metaBoard.getSize()));
+        frame.pack();
+    }
+
 
     private void createTimer(){
         this.timer = new Timer(60, this.tick);
@@ -77,8 +87,11 @@ public class KarateParty {
                         setMiniComponent(new kpRmk.ninjaSnake.PaintComponent(miniBoard));
                     }
                 } else {
-                    if(miniBoard.tick(miniComponent)){
+                    miniWinner = miniBoard.tick(miniComponent);
+                    if(miniWinner != -1){
                         meta = true;
+                        setMetaComponent();
+                        metaBoard.newRound(miniWinner);
                     }
                 }
             }

@@ -1,12 +1,13 @@
 package kpRmk.ninjaSnake;
 
 import kpRmk.AbstractPlayer;
+import kpRmk.Position;
 
 /**
  * Created by the karatekidz on 26/03/14.
  */
 public class Player extends AbstractPlayer{
-    private int x,y;
+    private Position position;
     private double angle;
     private boolean alive;
     private boolean left, right;
@@ -14,25 +15,24 @@ public class Player extends AbstractPlayer{
 
     public Player(int playerNumber) {
         this.number = playerNumber;
-        this.x = 50;
-        this.y = 100 + 50*number;
+        this.position = new Position(50,50*(playerNumber+1));
         this.angle = 0;
         this.alive = true;
-	this.left = false;
-	this.right = false;
-	this.rotateSpeed = Math.PI/15;
+        this.left = false;
+        this.right = false;
+        this.rotateSpeed = Math.PI/15;
     }
 
     public int getNumber() {
         return number;
     }
 
-    public int getX() {
-        return x;
+    public double getX() {
+        return position.getX();
     }
 
-    public int getY() {
-        return y;
+    public double getY() {
+        return position.getY();
     }
 
     public double getAngle() {
@@ -51,12 +51,12 @@ public class Player extends AbstractPlayer{
 	return right;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public void setX(double x) {
+        this.position.setX(x);
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setY(double y) {
+        this.position.setY(y);
     }
 
     public void setAngle(double angle) {
@@ -71,23 +71,23 @@ public class Player extends AbstractPlayer{
 	this.right = right;
     }
 
-    public void moveX(int x){
-        this.x += x;
+    public void moveX(double x){
+        this.setX(this.position.getX() + x);
     }
 
-    public void moveY(int y){
-        this.y += y;
+    public void moveY(double y){
+        this.setY(this.position.getY() + y);
     }
 
     public void rotateLeft() {
-	this.angle -= rotateSpeed;
-	this.angle %= 2*Math.PI;
+        this.angle -= rotateSpeed;
+        this.angle %= 2*Math.PI;
     }
 
     public void rotateRight() {
     	this.angle += rotateSpeed;
-	this.angle %= 2*Math.PI;
-        }
+	    this.angle %= 2*Math.PI;
+    }
 
     public void setAlive(boolean alive) {
         this.alive = alive;

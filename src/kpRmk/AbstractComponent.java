@@ -1,5 +1,4 @@
 package kpRmk;
-import metagame.BoardListener;
 
 import javax.swing.*;
 import java.awt.*;
