@@ -20,13 +20,15 @@ public class Board extends AbstractMinigame
     private int winner;
 
     public Board() {
-        this.height = 1000;
-        this.width = 1000;
+        this.height = 790;
+        this.width = 790;
         this.map = new boolean[this.height][this.width];
         this.players = new ArrayList<>();
         players.add(new Player(0));
         players.add(new Player(1));
         this.winner = -1;
+
+        createOutside();
 
     }
 
@@ -84,6 +86,19 @@ public class Board extends AbstractMinigame
 	if(x>=0 && x<width && y>=0 && y<height){
 		map[x][y] = true;
 	}
+    }
+
+    private void createOutside(){
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y += height-1) {
+                setMapPoint(x,y);
+            }
+        }
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x+=width-1) {
+                setMapPoint(x,y);
+            }
+        }
     }
 
     private boolean checkCollide(Player player){

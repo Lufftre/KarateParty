@@ -1,7 +1,5 @@
 package kpRmk.metagame;
 
-import kpRmk.AbstractPlayer;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -18,6 +16,8 @@ public class Board {
     private int currentPlayer;
     private int diceVal;
 
+    private int krystal;
+
     public Board(int nPlayers) {
         this.size = 50;
         this.random = new Random();
@@ -28,8 +28,7 @@ public class Board {
         this.roll = false;
         this.currentPlayer = 0;
         this.diceVal = 0;
-
-
+        newKrystal();
     }
 
     private void addPlayers(int n){
@@ -58,20 +57,27 @@ public class Board {
         return diceVal;
     }
 
+    public int getKrystal() {
+        return krystal;
+    }
+
     public void spacePress(){
         roll = true;
     }
 
-    public void newRound(int playerNumber){
+    private void newKrystal(){
+        krystal = random.nextInt(getSize());
+    }
+    public void newRound(int nWinner){
         for (Player player : players) {
-            if(player.getNumber() == playerNumber){ player.addKoins(10);break;}
+            if(player.getNumber() == nWinner){ player.addKoins(10);break;}
         }
         currentPlayer = 0;
     }
 
     public boolean tick(PaintComponent component){
         if(!roll){
-            diceVal = random.nextInt(12);
+            diceVal = random.nextInt(12) + 1;
             component.boardChanged();
         } else {
             getCurrentPlayer().playerMove();
@@ -79,12 +85,19 @@ public class Board {
             component.boardChanged();
 
             if(diceVal <= 0){
+                if(getCurrentPlayer().getSteps()%size == krystal){
+                    if(getCurrentPlayer().getKoins() >= 20){
+                        getCurrentPlayer().addKrystal();
+                        getCurrentPlayer().removeKoins(20);
+                        newKrystal();
+                        component.boardChanged();
+                    }
+                }
                 currentPlayer++;
                 roll = false;
                 if(currentPlayer == getPlayers().size()) return true;
             }
         }
         return false;
-
     }
 }

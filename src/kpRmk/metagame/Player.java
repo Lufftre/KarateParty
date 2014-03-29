@@ -43,22 +43,33 @@ public class Player {
         return number;
     }
 
-    public void setSteps(int steps) {
-        this.steps = steps;
+    public void setSteps(int n) {
+        this.steps = n;
     }
 
-    public void setKoins(int koins) {
-        this.koins = koins;
+    public void setKoins(int n) {
+        this.koins = n;
     }
 
-    public void setKrystals(int krystals) {
-        this.krystals = krystals;
+    public void setKrystals(int n) {
+        this.krystals = n;
     }
 
-    public void addKoins(int koins){
-        this.koins += koins;
+    public void addKoins(int n){
+        this.koins += n;
     }
 
+    public void removeKoins(int n){
+        this.koins -= n;
+    }
+
+    public void addKrystal(){
+        this.krystals++;
+    }
+
+    public void removeKrystals(int n){
+        this.krystals -= n;
+    }
     public void playerMove(){
         this.steps++;
     }

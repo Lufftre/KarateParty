@@ -32,7 +32,7 @@ public abstract class AbstractComponent extends JComponent{
         int ysize = i*tileSize;
         return new Dimension(xsize,ysize);
         */
-        return new Dimension(1060, 800);
+        return new Dimension(1000, 800);
     }
 
     protected abstract void paintComponent(Graphics g);

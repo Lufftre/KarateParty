@@ -54,18 +54,29 @@ public class PaintComponent extends AbstractComponent {
 
         }
 
+        //Draw Krystal
+        {
+        int x = (int)(Math.cos(radians*board.getKrystal()) * radiusBig);
+        int y = (int)(Math.sin(radians*board.getKrystal()) * radiusBig);
+            g2d.setColor(Color.CYAN);
+        g2d.fillOval(x + ((800/2)-radiusSmall) + 10,y + ((800/2)-radiusSmall) + 10,15,25);
+        }
+
+
         //Draw player stuff
 
         g2d.setFont(myFont);
         for (Player player : board.getPlayers()) {
             //Draw Player
-            g2d.setColor(Color.GREEN);
+            g2d.setColor(playerColorMap.get(player.getNumber()));
             int x = (int)(Math.cos(radians*player.getSteps()) * radiusBig);
             int y = (int)(Math.sin(radians*player.getSteps()) * radiusBig);
             g2d.fillRect(x + ((800/2)-radiusSmall) + 10,y + ((800/2)-radiusSmall) + 10,20,20);
             //Draw Score
+            g2d.drawString(String.valueOf(player.getName()),getWidth()-180 ,100*(1+player.getNumber()) - 40);
             g2d.setColor(Color.RED);
-            g2d.drawString(String.valueOf(player.getKoins()),getWidth()-100 ,100*(1+player.getNumber()));
+            g2d.drawString(String.valueOf(player.getKoins()),getWidth()-180 ,100*(1+player.getNumber()));
+            g2d.drawString(String.valueOf(player.getKrystals()),getWidth()-80 ,100*(1+player.getNumber()));
 
         }
         //Draw Die

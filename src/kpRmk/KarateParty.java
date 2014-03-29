@@ -77,6 +77,14 @@ public class KarateParty {
         timer.start();
     }
 
+    private void sleep(int n){
+        try {
+            Thread.sleep(n);
+        } catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
     private void createActions(){
         this.tick = new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
@@ -85,6 +93,7 @@ public class KarateParty {
                         meta = false;
                         setMiniBoard(new kpRmk.ninjaSnake.Board());
                         setMiniComponent(new kpRmk.ninjaSnake.PaintComponent(miniBoard));
+                        sleep(1000);
                     }
                 } else {
                     miniWinner = miniBoard.tick(miniComponent);
@@ -92,6 +101,7 @@ public class KarateParty {
                         meta = true;
                         setMetaComponent();
                         metaBoard.newRound(miniWinner);
+                        sleep(1000);
                     }
                 }
             }
