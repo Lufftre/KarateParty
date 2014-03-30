@@ -85,6 +85,7 @@ public class Board {
             component.boardChanged();
 
             if(diceVal <= 0){
+                //Try buy krystal
                 if(getCurrentPlayer().getSteps()%size == krystal){
                     if(getCurrentPlayer().getKoins() >= 20){
                         getCurrentPlayer().addKrystal();

@@ -12,15 +12,21 @@ public class Player extends AbstractPlayer{
     private boolean alive;
     private boolean left, right;
     private double rotateSpeed;
+    private int gapLength;
+    private int gapCounter;
 
     public Player(int playerNumber) {
         this.number = playerNumber;
-        this.position = new Position(50,50*(playerNumber+1));
+        this.position = new Position(0,0);
         this.angle = 0;
         this.alive = true;
         this.left = false;
         this.right = false;
         this.rotateSpeed = Math.PI/15;
+
+        this.gapCounter = 0;
+        this.gapLength = 4;
+
     }
 
     public int getNumber() {
@@ -37,6 +43,22 @@ public class Player extends AbstractPlayer{
 
     public double getAngle() {
         return angle;
+    }
+
+    public int getGapLength() {
+        return gapLength;
+    }
+
+    public int getGapCounter() {
+        return gapCounter;
+    }
+
+    public void setGapCounter(int gapCounter) {
+        this.gapCounter = gapCounter;
+    }
+
+    public void gapCounterTick(){
+        gapCounter--;
     }
 
     public boolean isAlive() {

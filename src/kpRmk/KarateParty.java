@@ -5,6 +5,8 @@ import kpRmk.metagame.PaintComponent;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by the karatekidz on 26/03/14.
@@ -21,8 +23,11 @@ public class KarateParty {
     private Action tick;
 
     private boolean meta;
-
+    private Random random;
     private int miniWinner;
+
+    private ArrayList<AbstractMinigame> miniBoards;
+    private ArrayList<AbstractComponent> miniComponents;
 
     public KarateParty() {
         createFrame();
@@ -30,10 +35,26 @@ public class KarateParty {
         createMetaComponent();
         createActions();
         createTimer();
+        createMiniGames();
         this.meta = true;
+        this.random = new Random();
 
     }
 
+    private void createMiniGames(){
+        miniBoards = new ArrayList<>();
+        miniComponents = new ArrayList<>();
+
+        AbstractMinigame game = new kpRmk.ninjaSnake.Board();
+        miniBoards.add(game);
+        miniComponents.add(new kpRmk.ninjaSnake.PaintComponent(game));
+    }
+
+    private void initRandomMiniGame(){
+        int n = random.nextInt(miniBoards.size());
+        setMiniBoard(miniBoards.get(n));
+        setMiniComponent(miniComponents.get(n));
+    }
     private void createBoard(){
         this.metaBoard = new Board(2);
     }
@@ -91,8 +112,7 @@ public class KarateParty {
                 if(meta){
                     if(metaBoard.tick(metaComponent)){
                         meta = false;
-                        setMiniBoard(new kpRmk.ninjaSnake.Board());
-                        setMiniComponent(new kpRmk.ninjaSnake.PaintComponent(miniBoard));
+                        initRandomMiniGame();
                         sleep(1000);
                     }
                 } else {

@@ -2,11 +2,10 @@ package kpRmk.ninjaSnake;
 
 import kpRmk.AbstractComponent;
 import kpRmk.AbstractMinigame;
-import kpRmk.Minigame;
 import kpRmk.Position;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by the karatekidz on 26/03/14.
@@ -16,20 +15,32 @@ public class Board extends AbstractMinigame
 
     private int height,width;
     private boolean[][] map;
-    private ArrayList<Player> players;
     private int winner;
+    private Random random;
+
 
     public Board() {
+        this.random = new Random();
         this.height = 790;
         this.width = 790;
         this.map = new boolean[this.height][this.width];
         this.players = new ArrayList<>();
         players.add(new Player(0));
         players.add(new Player(1));
-        this.winner = -1;
-
+        resetBoard();
         createOutside();
 
+    }
+    private void resetBoard(){
+        for (Player player : players) {
+            player.setX(random.nextInt(width -400)+200);
+            player.setY(random.nextInt(height -400)+200);
+            player.setAlive(true);
+            player.setLeft(false);
+            player.setRight(false);
+        }
+        this.winner = -1;
+        this.map = new boolean[this.height][this.width];
     }
 
     public int getHeight() {
@@ -38,10 +49,6 @@ public class Board extends AbstractMinigame
 
     public int getWidth() {
 	return width;
-    }
-
-    public ArrayList<Player> getPlayers() {
-        return players;
     }
 
     public boolean[][] getMap() {
@@ -102,8 +109,6 @@ public class Board extends AbstractMinigame
     }
 
     private boolean checkCollide(Player player){
-        //int x = (int)(player.getX() + xOffset);
-        //int y = (int)(player.getY() + yOffset);
         double x = player.getX();
         double y = player.getY();
 
@@ -129,7 +134,7 @@ public class Board extends AbstractMinigame
     }
 
     private void killPlayer(Player player){
-	player.setAlive(false);
+	    player.setAlive(false);
     }
     private void checkWinner(){
         int n = 0;
@@ -140,7 +145,9 @@ public class Board extends AbstractMinigame
                 winnerTemp = player.getNumber();
             }
         }
-        if(n==1) winner = winnerTemp;
+        if(n==1) {
+            winner = winnerTemp;
+        }
     }
 
     @Override
@@ -149,31 +156,41 @@ public class Board extends AbstractMinigame
             playerTick(player);
         }
         component.boardChanged();
-
-        return winner;
+        if(winner == -1){
+            return winner;
+        } else {
+            int temp = winner;
+            resetBoard();
+            return temp;
+        }
     }
 
     private void playerTick(Player player){
-	if(player.isAlive()){
-	    //Rotate Snake
-	    if(player.isLeft()) player.rotateLeft();
-	    if(player.isRight()) player.rotateRight();
+        if(player.isAlive()){
+            //Rotate Snake
+            if(player.isLeft()) player.rotateLeft();
+            if(player.isRight()) player.rotateRight();
 
-	    //Leave trail
-	    setMapPoint((int)player.getX(),(int)player.getY());
+            //Leave trail
+            if(player.getGapCounter() < 0){
+                player.setGapCounter(100);
+            } else if(player.getGapCounter() < player.getGapLength()){
+                player.gapCounterTick();
+            } else {
+                setMapPoint((int)player.getX(),(int)player.getY());
+                player.gapCounterTick();
+            }
 
-	    double x = (Math.cos(player.getAngle())*5);
-	    double y = (Math.sin(player.getAngle())*5);
-	    //Check collision
-	    if(checkCollide(player)){
-		    killPlayer(player);
-            checkWinner();
-	    } //else {
-		//Move Snake
-		player.moveX(x);
-		player.moveY(y);
-	    //}
-	}
 
+            double x = (Math.cos(player.getAngle())*5);
+            double y = (Math.sin(player.getAngle())*5);
+            //Check collision
+            if(checkCollide(player)){
+                killPlayer(player);
+                checkWinner();
+            }
+            player.moveX(x);
+            player.moveY(y);
+        }
     }
 }
