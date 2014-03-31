@@ -15,7 +15,7 @@ public class Player extends AbstractPlayer {
 
     public Player(int playerNumber){
         this.number = playerNumber;
-        this.y = 400;
+        this.y = 0;
         this.width = 25;
         this.height = 25;
         this.speed = 0;

@@ -23,7 +23,7 @@ public class Player extends AbstractPlayer{
         this.alive = true;
         this.left = false;
         this.right = false;
-        this.rotateSpeed = Math.PI/15;
+        this.rotateSpeed = Math.PI/30;
         this.speed = 3;
 
         this.gapCounter = 0;

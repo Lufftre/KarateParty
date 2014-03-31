@@ -47,12 +47,12 @@ public class KarateParty {
 
 
         AbstractMinigame game;
-    //     /*
+         /*
         game = new kpRmk.ninjaSnake.Board();
         miniBoards.add(game);
         miniComponents.add(new kpRmk.ninjaSnake.PaintComponent(game));
        // */
-       // /*
+      //  /*
         game = new kpRmk.sumoBird.Board();
         miniBoards.add(game);
         miniComponents.add(new kpRmk.sumoBird.PaintComponent(game));
@@ -127,9 +127,11 @@ public class KarateParty {
                 } else {
                     miniWinner = miniBoard.tick(miniComponent);
                     if(miniWinner != -1){
+                        miniComponent.boardChanged();
                         meta = true;
                         setMetaComponent();
                         metaBoard.newRound(miniWinner);
+                        miniBoard.resetBoard();
                         sleep(1000);
                     }
                 }

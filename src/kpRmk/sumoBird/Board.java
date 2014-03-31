@@ -4,6 +4,7 @@ import kpRmk.AbstractComponent;
 import kpRmk.AbstractMinigame;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
 
@@ -21,12 +22,15 @@ public class Board extends AbstractMinigame {
     private int pipeSpeed;
     private int fallSpeed;
     private int winner;
+    private Player player1,player2,player3,player4;
 
     public Board(){
         this.random =  new Random();
         this.players = new ArrayList<>();
-        players.add(new Player(0));
-        players.add(new Player(1));
+        this.player1 = new Player(0);
+        this.player2 = new Player(1);
+        this.players.add(player1);
+        this.players.add(player2);
         this.pipes = new ArrayList<>();
         this.pipeRate = 80;
         this.pipeCounter = 0;
@@ -52,14 +56,18 @@ public class Board extends AbstractMinigame {
     }
 
     public void upPress(){
-        players.get(0).flap();
+        player1.flap();
     }
     public void wPress(){
-        players.get(1).flap();
+        player2.flap();
     }
 
     public void upRelease(){}
     public void wRelease(){}
+
+    public int getWinner() {
+        return winner;
+    }
 
     private boolean checkLanded(Player player){
         if(player.getY() > 800-player.getHeight())return true;
@@ -115,18 +123,16 @@ public class Board extends AbstractMinigame {
     }
 
     public int tick(AbstractComponent component) {
+        if(winner != -1){
+            return winner;
+        }
         pipeTick();
+        Collections.shuffle(players);
         for (Player player : players) {
             playerTick(player);
             component.boardChanged();
         }
-        if(winner == -1){
-            return winner;
-        } else {
-            int temp = winner;
-            resetBoard();
-            return temp;
-        }
+        return -1;
     }
 
     private void playerTick(Player player){
@@ -144,6 +150,7 @@ public class Board extends AbstractMinigame {
         if(checkLanded(player)){
             player.setAlive(false);
             player.setSpeed(0);
+            player.setY(height-player.getHeight());
             checkWinner();
         };
 
@@ -165,9 +172,9 @@ public class Board extends AbstractMinigame {
 
     }
 
-    private void resetBoard(){
+    public void resetBoard(){
         for (Player player : players) {
-            player.setY(400);
+            player.setY(0);
             player.setSpeed(0);
             player.setAlive(true);
         }

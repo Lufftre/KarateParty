@@ -9,5 +9,6 @@ import java.util.ArrayList;
  */
 public abstract class AbstractMinigame{
     public abstract int tick(AbstractComponent component);
+    public abstract void resetBoard();
 
 }

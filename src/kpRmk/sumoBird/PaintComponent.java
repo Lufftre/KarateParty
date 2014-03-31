@@ -67,14 +67,22 @@ public class PaintComponent extends AbstractComponent {
         final Graphics2D g2d = (Graphics2D) g;
 
         for (Pipe pipe : board.getPipes()) {
-            g2d.setColor(Color.BLACK);
+            g2d.setColor(Color.GRAY);
             g2d.fillRect(board.getWidth() - pipe.getX(),0,pipe.getWidth(),pipe.getGapY());
             g2d.fillRect(board.getWidth() - pipe.getX(),pipe.getGapY()+pipe.getGapHeight(),pipe.getWidth(),board.getHeight()-pipe.getGapY());
         }
 
+
         for (Player player : board.getPlayers()) {
-            g2d.setColor(playerColorMap.get(player.getNumber()));
+
+            if(player.isAlive()){
+                g2d.setColor(playerColorMap.get(player.getNumber()));
+            } else{
+                g2d.setColor(Color.GRAY);
+            }
             g2d.fillRect(100,player.getY(),player.getWidth(),player.getHeight());
+            g2d.setColor(Color.BLACK);
+            g2d.fillOval(115,player.getY()+10,5,5);
         }
     }
 }

@@ -13,6 +13,8 @@ public class Board {
     private Random random;
 
     private boolean roll;
+    private int autoRoll;
+    private int autoRollRate;
     private int currentPlayer;
     private int diceVal;
 
@@ -26,6 +28,8 @@ public class Board {
 
         this.random = new Random();
         this.roll = false;
+        this.autoRollRate = 30;
+        this.autoRoll = autoRollRate;
         this.currentPlayer = 0;
         this.diceVal = 0;
         newKrystal();
@@ -76,9 +80,10 @@ public class Board {
     }
 
     public boolean tick(PaintComponent component){
-        if(!roll){
+        if(autoRoll!=0){
             diceVal = random.nextInt(12) + 1;
             component.boardChanged();
+            autoRoll--;
         } else {
             getCurrentPlayer().playerMove();
             diceVal--;
@@ -95,6 +100,7 @@ public class Board {
                     }
                 }
                 currentPlayer++;
+                autoRoll = autoRollRate;
                 roll = false;
                 if(currentPlayer == getPlayers().size()) return true;
             }

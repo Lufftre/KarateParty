@@ -7,14 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3be05e89-6fcc-46cd-bbd1-4a815263a430" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpRmk/sumoBird/Pipe.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/AbstractMinigame.java" afterPath="$PROJECT_DIR$/src/kpRmk/AbstractMinigame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/AbstractPlayer.java" afterPath="$PROJECT_DIR$/src/kpRmk/AbstractPlayer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/metagame/Board.java" afterPath="$PROJECT_DIR$/src/kpRmk/metagame/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java" afterPath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/sumoBird/Board.java" afterPath="$PROJECT_DIR$/src/kpRmk/sumoBird/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KarateParty.iws" afterPath="$PROJECT_DIR$/KarateParty.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/KarateParty.java" afterPath="$PROJECT_DIR$/src/kpRmk/KarateParty.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java" afterPath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/sumoBird/PaintComponent.java" afterPath="$PROJECT_DIR$/src/kpRmk/sumoBird/PaintComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java" afterPath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/sumoBird/Player.java" afterPath="$PROJECT_DIR$/src/kpRmk/sumoBird/Player.java" />
@@ -81,10 +81,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="1" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0" vertical-offset="2036" max-vertical-offset="2505">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#createOutside#0;class#Board#0" expanded="false" />
+                <element signature="method#checkCollide#0;class#Board#0" expanded="false" />
+                <element signature="method#getCollidePoints#0;class#Board#0" expanded="false" />
+                <element signature="method#killPlayer#0;class#Board#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PaintComponent.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/sumoBird/PaintComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="9" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="780">
+            <state line="81" column="13" selection-start="2656" selection-end="2656" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="900">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#createKeybinds#0;class#PaintComponent#0" expanded="false" />
@@ -94,31 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="751" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="263" max-vertical-offset="2445">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#leftRelease#0;class#Board#0" expanded="false" />
-                <element signature="method#rightPress#0;class#Board#0" expanded="false" />
-                <element signature="method#rightRelease#0;class#Board#0" expanded="false" />
-                <element signature="method#aPress#0;class#Board#0" expanded="false" />
-                <element signature="method#aRelease#0;class#Board#0" expanded="false" />
-                <element signature="method#dPress#0;class#Board#0" expanded="false" />
-                <element signature="method#dRelease#0;class#Board#0" expanded="false" />
-                <element signature="method#createOutside#0;class#Board#0" expanded="false" />
-                <element signature="method#getCollidePoints#0;class#Board#0" expanded="false" />
-                <element signature="method#killPlayer#0;class#Board#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/sumoBird/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="5" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="780">
+            <state line="17" column="18" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="780">
               <folding>
                 <element signature="method#moveY#0;class#Player#0" expanded="false" />
                 <element signature="method#changeSpeed#0;class#Player#0" expanded="false" />
@@ -127,15 +121,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KarateParty.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="KarateParty.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/KarateParty.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="6" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.5607676" vertical-offset="382" max-vertical-offset="2145">
+            <state line="54" column="8" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="2175">
               <folding>
-                <element signature="e#2428#2429#0" expanded="true" />
-                <element signature="e#2469#2470#0" expanded="true" />
-                <element signature="e#3082#3754#0" expanded="true" />
-                <element signature="e#3743#3744#0" expanded="true" />
+                <element signature="e#2426#2427#0" expanded="true" />
+                <element signature="e#2467#2468#0" expanded="true" />
+                <element signature="e#3080#3854#0" expanded="true" />
+                <element signature="e#3843#3844#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,7 +138,7 @@
       <file leaf-file-name="AbstractMinigame.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/AbstractMinigame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+            <state line="11" column="38" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -155,11 +149,13 @@
       <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/sumoBird/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="175" column="36" selection-start="4271" selection-end="4271" vertical-scroll-proportion="0.0" vertical-offset="1991" max-vertical-offset="2520">
+            <state line="32" column="34" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="2625">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#upPress#0;class#Board#0" expanded="false" />
                 <element signature="method#wPress#0;class#Board#0" expanded="false" />
+                <element signature="e#1558#1559#0" expanded="true" />
+                <element signature="e#1587#1588#0" expanded="true" />
                 <element signature="method#ceiling#0;class#Board#0" expanded="false" />
               </folding>
             </state>
@@ -175,10 +171,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Board.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="22" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="993" max-vertical-offset="1485">
+            <state line="102" column="39" selection-start="2491" selection-end="2491" vertical-scroll-proportion="0.74413645" vertical-offset="1016" max-vertical-offset="1575">
               <folding />
             </state>
           </provider>
@@ -197,7 +193,24 @@
         <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="48" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="990">
-              <folding />
+              <folding>
+                <element signature="e#486#487#0" expanded="false" />
+                <element signature="e#513#514#0" expanded="false" />
+                <element signature="e#542#543#0" expanded="false" />
+                <element signature="e#570#571#0" expanded="false" />
+                <element signature="e#599#600#0" expanded="false" />
+                <element signature="e#627#628#0" expanded="false" />
+                <element signature="e#659#660#0" expanded="false" />
+                <element signature="e#690#691#0" expanded="false" />
+                <element signature="e#720#721#0" expanded="false" />
+                <element signature="e#749#750#0" expanded="false" />
+                <element signature="e#784#785#0" expanded="false" />
+                <element signature="e#814#815#0" expanded="false" />
+                <element signature="e#849#850#0" expanded="false" />
+                <element signature="e#879#880#0" expanded="false" />
+                <element signature="e#917#918#0" expanded="false" />
+                <element signature="e#950#951#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -246,17 +259,17 @@
         <option value="$PROJECT_DIR$/src/kpRmk/metagame/Player.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/AbstractComponent.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/metagame/PaintComponent.java" />
-        <option value="$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java" />
-        <option value="$PROJECT_DIR$/src/kpRmk/metagame/Board.java" />
-        <option value="$PROJECT_DIR$/src/kpRmk/AbstractMinigame.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/AbstractPlayer.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/sumoBird/Pipe.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java" />
-        <option value="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java" />
-        <option value="$PROJECT_DIR$/src/kpRmk/sumoBird/PaintComponent.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/sumoBird/Player.java" />
-        <option value="$PROJECT_DIR$/src/kpRmk/sumoBird/Board.java" />
+        <option value="$PROJECT_DIR$/src/kpRmk/sumoBird/PaintComponent.java" />
+        <option value="$PROJECT_DIR$/src/kpRmk/AbstractMinigame.java" />
+        <option value="$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java" />
+        <option value="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java" />
         <option value="$PROJECT_DIR$/src/kpRmk/KarateParty.java" />
+        <option value="$PROJECT_DIR$/src/kpRmk/sumoBird/Board.java" />
+        <option value="$PROJECT_DIR$/src/kpRmk/metagame/Board.java" />
       </list>
     </option>
   </component>
@@ -702,7 +715,11 @@
       <created>1396183038135</created>
       <updated>1396183038135</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fps set to 60&#10;&#10;NinjaSnake:&#10;+Adjusted for 60fps&#10;&#10;SumoBird:&#10;+Board&#10;+PaintComponent&#10;+Player&#10;+Pipe&#10;&#10;AbstractMinigame:&#10;-ArrayList Players&#10;&#10;AbstractPlayer:&#10;+getNumber();">
+      <created>1396224392039</created>
+      <updated>1396224392039</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -762,7 +779,8 @@
     <MESSAGE value="Added delay when program transitions between games.&#10;&#10;Metagame:&#10;+krystals&#10;+die now 1-12&#10;+Draws players according to their color&#10;+Draws players score.&#10;&#10;NinjaSnake:&#10;+Map border&#10;&#10;&#10;" />
     <MESSAGE value="Metagame able to transition to random minigame.&#10;NinjaSnake:&#10;+Board Reset&#10;+Players random startlocation&#10;+Snake gaps&#10;+Casting Paint Component&#10;SumoBird inc&#10;&#10;&#10;&#10;" />
     <MESSAGE value="Metagame able to transition to random minigame.&#10;&#10;NinjaSnake:&#10;+Board Reset&#10;+Players random startlocation&#10;+Snake gaps&#10;+Casting Paint Component&#10;&#10;SumoBird inc&#10;&#10;&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Metagame able to transition to random minigame.&#10;&#10;NinjaSnake:&#10;+Board Reset&#10;+Players random startlocation&#10;+Snake gaps&#10;+Casting Paint Component&#10;&#10;SumoBird inc&#10;&#10;&#10;&#10;" />
+    <MESSAGE value="Fps set to 60&#10;&#10;NinjaSnake:&#10;+Adjusted for 60fps&#10;&#10;SumoBird:&#10;+Board&#10;+PaintComponent&#10;+Player&#10;+Pipe&#10;&#10;AbstractMinigame:&#10;-ArrayList Players&#10;&#10;AbstractPlayer:&#10;+getNumber();" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fps set to 60&#10;&#10;NinjaSnake:&#10;+Adjusted for 60fps&#10;&#10;SumoBird:&#10;+Board&#10;+PaintComponent&#10;+Player&#10;+Pipe&#10;&#10;AbstractMinigame:&#10;-ArrayList Players&#10;&#10;AbstractPlayer:&#10;+getNumber();" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -784,14 +802,8 @@
         <state line="23" column="24" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="2655">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#leftRelease#0;class#Board#0" expanded="false" />
-            <element signature="method#rightPress#0;class#Board#0" expanded="false" />
-            <element signature="method#rightRelease#0;class#Board#0" expanded="false" />
-            <element signature="method#aPress#0;class#Board#0" expanded="false" />
-            <element signature="method#aRelease#0;class#Board#0" expanded="false" />
-            <element signature="method#dPress#0;class#Board#0" expanded="false" />
-            <element signature="method#dRelease#0;class#Board#0" expanded="false" />
             <element signature="method#createOutside#0;class#Board#0" expanded="false" />
+            <element signature="method#checkCollide#0;class#Board#0" expanded="false" />
             <element signature="method#getCollidePoints#0;class#Board#0" expanded="false" />
             <element signature="method#killPlayer#0;class#Board#0" expanded="false" />
           </folding>
@@ -801,7 +813,15 @@
     <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="0" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="1515">
-          <folding />
+          <folding>
+            <element signature="method#gapCounterTick#0;class#Player#0" expanded="false" />
+            <element signature="method#setX#0;class#Player#0" expanded="false" />
+            <element signature="method#setY#0;class#Player#0" expanded="false" />
+            <element signature="method#moveX#0;class#Player#0" expanded="false" />
+            <element signature="method#moveY#0;class#Player#0" expanded="false" />
+            <element signature="method#rotateLeft#0;class#Player#0" expanded="false" />
+            <element signature="method#rotateRight#0;class#Player#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -854,7 +874,24 @@
     <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="28" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="1065">
-          <folding />
+          <folding>
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#542#543#0" expanded="false" />
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#599#600#0" expanded="false" />
+            <element signature="e#627#628#0" expanded="false" />
+            <element signature="e#659#660#0" expanded="false" />
+            <element signature="e#690#691#0" expanded="false" />
+            <element signature="e#720#721#0" expanded="false" />
+            <element signature="e#749#750#0" expanded="false" />
+            <element signature="e#784#785#0" expanded="false" />
+            <element signature="e#814#815#0" expanded="false" />
+            <element signature="e#849#850#0" expanded="false" />
+            <element signature="e#879#880#0" expanded="false" />
+            <element signature="e#917#918#0" expanded="false" />
+            <element signature="e#950#951#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -871,10 +908,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="35" selection-start="1935" selection-end="1935" vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="1455">
           <folding>
-            <element signature="e#2428#2429#0" expanded="true" />
-            <element signature="e#2469#2470#0" expanded="true" />
-            <element signature="e#3082#3754#0" expanded="true" />
-            <element signature="e#3743#3744#0" expanded="true" />
+            <element signature="e#2426#2427#0" expanded="true" />
+            <element signature="e#2467#2468#0" expanded="true" />
+            <element signature="e#3080#3854#0" expanded="true" />
+            <element signature="e#3843#3844#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -884,14 +921,8 @@
         <state line="12" column="1" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="1458" max-vertical-offset="1950">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#leftRelease#0;class#Board#0" expanded="false" />
-            <element signature="method#rightPress#0;class#Board#0" expanded="false" />
-            <element signature="method#rightRelease#0;class#Board#0" expanded="false" />
-            <element signature="method#aPress#0;class#Board#0" expanded="false" />
-            <element signature="method#aRelease#0;class#Board#0" expanded="false" />
-            <element signature="method#dPress#0;class#Board#0" expanded="false" />
-            <element signature="method#dRelease#0;class#Board#0" expanded="false" />
             <element signature="method#createOutside#0;class#Board#0" expanded="false" />
+            <element signature="method#checkCollide#0;class#Board#0" expanded="false" />
             <element signature="method#getCollidePoints#0;class#Board#0" expanded="false" />
             <element signature="method#killPlayer#0;class#Board#0" expanded="false" />
           </folding>
@@ -933,7 +964,24 @@
     <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="24" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1005">
-          <folding />
+          <folding>
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#542#543#0" expanded="false" />
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#599#600#0" expanded="false" />
+            <element signature="e#627#628#0" expanded="false" />
+            <element signature="e#659#660#0" expanded="false" />
+            <element signature="e#690#691#0" expanded="false" />
+            <element signature="e#720#721#0" expanded="false" />
+            <element signature="e#749#750#0" expanded="false" />
+            <element signature="e#784#785#0" expanded="false" />
+            <element signature="e#814#815#0" expanded="false" />
+            <element signature="e#849#850#0" expanded="false" />
+            <element signature="e#879#880#0" expanded="false" />
+            <element signature="e#917#918#0" expanded="false" />
+            <element signature="e#950#951#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -959,7 +1007,24 @@
     <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="990">
-          <folding />
+          <folding>
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#542#543#0" expanded="false" />
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#599#600#0" expanded="false" />
+            <element signature="e#627#628#0" expanded="false" />
+            <element signature="e#659#660#0" expanded="false" />
+            <element signature="e#690#691#0" expanded="false" />
+            <element signature="e#720#721#0" expanded="false" />
+            <element signature="e#749#750#0" expanded="false" />
+            <element signature="e#784#785#0" expanded="false" />
+            <element signature="e#814#815#0" expanded="false" />
+            <element signature="e#849#850#0" expanded="false" />
+            <element signature="e#879#880#0" expanded="false" />
+            <element signature="e#917#918#0" expanded="false" />
+            <element signature="e#950#951#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -977,103 +1042,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/AbstractMinigame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpRmk/AbstractPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="5" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="8" selection-start="3522" selection-end="3560" vertical-scroll-proportion="0.3597561" vertical-offset="438" max-vertical-offset="1065">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#createKeybinds#0;class#PaintComponent#0" expanded="false" />
-            <element signature="method#createActions#0;class#PaintComponent#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="22" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1485">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/sumoBird/Pipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="28" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="25" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.7356077" vertical-offset="375" max-vertical-offset="1530">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/sumoBird/PaintComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="9" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="780">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#createKeybinds#0;class#PaintComponent#0" expanded="false" />
-            <element signature="method#createActions#0;class#PaintComponent#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="751" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="263" max-vertical-offset="2445">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#leftRelease#0;class#Board#0" expanded="false" />
-            <element signature="method#rightPress#0;class#Board#0" expanded="false" />
-            <element signature="method#rightRelease#0;class#Board#0" expanded="false" />
-            <element signature="method#aPress#0;class#Board#0" expanded="false" />
-            <element signature="method#aRelease#0;class#Board#0" expanded="false" />
-            <element signature="method#dPress#0;class#Board#0" expanded="false" />
-            <element signature="method#dRelease#0;class#Board#0" expanded="false" />
-            <element signature="method#createOutside#0;class#Board#0" expanded="false" />
-            <element signature="method#getCollidePoints#0;class#Board#0" expanded="false" />
-            <element signature="method#killPlayer#0;class#Board#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/sumoBird/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="5" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="780">
-          <folding>
-            <element signature="method#moveY#0;class#Player#0" expanded="false" />
-            <element signature="method#changeSpeed#0;class#Player#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpRmk/sumoBird/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="36" selection-start="4271" selection-end="4271" vertical-scroll-proportion="0.0" vertical-offset="1991" max-vertical-offset="2520">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#upPress#0;class#Board#0" expanded="false" />
-            <element signature="method#wPress#0;class#Board#0" expanded="false" />
-            <element signature="method#ceiling#0;class#Board#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1084,15 +1056,112 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="0" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.0" vertical-offset="551" max-vertical-offset="1290">
+          <folding>
+            <element signature="method#gapCounterTick#0;class#Player#0" expanded="false" />
+            <element signature="method#setX#0;class#Player#0" expanded="false" />
+            <element signature="method#setY#0;class#Player#0" expanded="false" />
+            <element signature="method#moveX#0;class#Player#0" expanded="false" />
+            <element signature="method#moveY#0;class#Player#0" expanded="false" />
+            <element signature="method#rotateLeft#0;class#Player#0" expanded="false" />
+            <element signature="method#rotateRight#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/sumoBird/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="18" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="780">
+          <folding>
+            <element signature="method#moveY#0;class#Player#0" expanded="false" />
+            <element signature="method#changeSpeed#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/sumoBird/Pipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="28" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/sumoBird/PaintComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="13" selection-start="2656" selection-end="2656" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="900">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createKeybinds#0;class#PaintComponent#0" expanded="false" />
+            <element signature="method#createActions#0;class#PaintComponent#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/AbstractMinigame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="38" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/PaintComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="7" selection-start="4108" selection-end="4108" vertical-scroll-proportion="0.84008527" vertical-offset="476" max-vertical-offset="1095">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createKeybinds#0;class#PaintComponent#0" expanded="false" />
+            <element signature="method#createActions#0;class#PaintComponent#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/ninjaSnake/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="1" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0" vertical-offset="2036" max-vertical-offset="2505">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createOutside#0;class#Board#0" expanded="false" />
+            <element signature="method#checkCollide#0;class#Board#0" expanded="false" />
+            <element signature="method#getCollidePoints#0;class#Board#0" expanded="false" />
+            <element signature="method#killPlayer#0;class#Board#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/sumoBird/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="34" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="2625">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#upPress#0;class#Board#0" expanded="false" />
+            <element signature="method#wPress#0;class#Board#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="true" />
+            <element signature="e#1587#1588#0" expanded="true" />
+            <element signature="method#ceiling#0;class#Board#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpRmk/KarateParty.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="6" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.5607676" vertical-offset="382" max-vertical-offset="2145">
+        <state line="54" column="8" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="2175">
           <folding>
-            <element signature="e#2428#2429#0" expanded="true" />
-            <element signature="e#2469#2470#0" expanded="true" />
-            <element signature="e#3082#3754#0" expanded="true" />
-            <element signature="e#3743#3744#0" expanded="true" />
+            <element signature="e#2426#2427#0" expanded="true" />
+            <element signature="e#2467#2468#0" expanded="true" />
+            <element signature="e#3080#3854#0" expanded="true" />
+            <element signature="e#3843#3844#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpRmk/metagame/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="39" selection-start="2491" selection-end="2491" vertical-scroll-proportion="0.74413645" vertical-offset="1016" max-vertical-offset="1575">
+          <folding />
         </state>
       </provider>
     </entry>

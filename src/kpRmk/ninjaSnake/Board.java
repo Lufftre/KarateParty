@@ -5,6 +5,7 @@ import kpRmk.AbstractMinigame;
 import kpRmk.Position;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -18,6 +19,7 @@ public class Board extends AbstractMinigame
     private int winner;
     private Random random;
     private ArrayList<Player> players;
+    private Player player1,player2,player3,player4;
 
 
     public Board() {
@@ -26,13 +28,14 @@ public class Board extends AbstractMinigame
         this.width = 790;
         this.map = new boolean[this.height][this.width];
         this.players = new ArrayList<>();
-        players.add(new Player(0));
-        players.add(new Player(1));
+        this.player1 = new Player(0);
+        this.player2 = new Player(1);
+        players.add(player1);
+        players.add(player2);
         resetBoard();
-        createOutside();
 
     }
-    private void resetBoard(){
+    public void resetBoard(){
         for (Player player : players) {
             player.setX(random.nextInt(width -400)+200);
             player.setY(random.nextInt(height -400)+200);
@@ -42,6 +45,7 @@ public class Board extends AbstractMinigame
         }
         this.winner = -1;
         this.map = new boolean[this.height][this.width];
+        createOutside();
     }
 
     public int getHeight() {
@@ -69,29 +73,29 @@ public class Board extends AbstractMinigame
     };
 
     public void leftPress(){
-	players.get(0).setLeft(true);
+	    player1.setLeft(true);
     }
     public void leftRelease(){
-	players.get(0).setLeft(false);
+        player1.setLeft(false);
     }
     public void rightPress(){
-	players.get(0).setRight(true);
+        player1.setRight(true);
     }
     public void rightRelease(){
-	players.get(0).setRight(false);
+        player1.setRight(false);
     }
 
     public void aPress(){
-	players.get(1).setLeft(true);
+	    player2.setLeft(true);
     }
     public void aRelease(){
-	players.get(1).setLeft(false);
+	    player2.setLeft(false);
     }
     public void dPress(){
-	players.get(1).setRight(true);
+	    player2.setRight(true);
     }
     public void dRelease(){
-	players.get(1).setRight(false);
+	    player2.setRight(false);
     }
 
     private void setMapPoint(int x, int y){
@@ -157,17 +161,15 @@ public class Board extends AbstractMinigame
 
     @Override
     public int tick(AbstractComponent component) {
-	for (Player player : players) {
+        if(winner != -1){
+            return winner;
+        }
+        Collections.shuffle(players);
+        for (Player player : players) {
             playerTick(player);
         }
         component.boardChanged();
-        if(winner == -1){
-            return winner;
-        } else {
-            int temp = winner;
-            resetBoard();
-            return temp;
-        }
+        return -1;
     }
 
     private void playerTick(Player player){
