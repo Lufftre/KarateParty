@@ -45,9 +45,18 @@ public class KarateParty {
         miniBoards = new ArrayList<>();
         miniComponents = new ArrayList<>();
 
-        AbstractMinigame game = new kpRmk.ninjaSnake.Board();
+
+        AbstractMinigame game;
+    //     /*
+        game = new kpRmk.ninjaSnake.Board();
         miniBoards.add(game);
         miniComponents.add(new kpRmk.ninjaSnake.PaintComponent(game));
+       // */
+       // /*
+        game = new kpRmk.sumoBird.Board();
+        miniBoards.add(game);
+        miniComponents.add(new kpRmk.sumoBird.PaintComponent(game));
+       // */
     }
 
     private void initRandomMiniGame(){
@@ -93,7 +102,7 @@ public class KarateParty {
 
 
     private void createTimer(){
-        this.timer = new Timer(60, this.tick);
+        this.timer = new Timer(17, this.tick);
         timer.setCoalesce(true);
         timer.start();
     }

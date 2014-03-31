@@ -17,6 +17,7 @@ public class Board extends AbstractMinigame
     private boolean[][] map;
     private int winner;
     private Random random;
+    private ArrayList<Player> players;
 
 
     public Board() {
@@ -62,6 +63,10 @@ public class Board extends AbstractMinigame
         }
         return true;
     }
+
+    public ArrayList<Player> getPlayers(){
+        return players;
+    };
 
     public void leftPress(){
 	players.get(0).setLeft(true);
@@ -126,8 +131,8 @@ public class Board extends AbstractMinigame
         ArrayList<Position> positions = new ArrayList<>();
         double a = Math.PI/39;
         for (int i = -20; i < 20; i++) {
-            double xTemp = (Math.cos((a*i) + angle)*10) + x;
-            double yTemp = (Math.sin((a * i) + angle)*10) + y;
+            double xTemp = (Math.cos((a*i) + angle)*6) + x;
+            double yTemp = (Math.sin((a * i) + angle)*6) + y;
             positions.add(new Position(xTemp,yTemp));
         }
         return positions;
@@ -182,8 +187,8 @@ public class Board extends AbstractMinigame
             }
 
 
-            double x = (Math.cos(player.getAngle())*5);
-            double y = (Math.sin(player.getAngle())*5);
+            double x = (Math.cos(player.getAngle())*player.getSpeed());
+            double y = (Math.sin(player.getAngle())*player.getSpeed());
             //Check collision
             if(checkCollide(player)){
                 killPlayer(player);

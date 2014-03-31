@@ -10,8 +10,4 @@ import java.util.ArrayList;
 public abstract class AbstractMinigame{
     public abstract int tick(AbstractComponent component);
 
-    protected ArrayList<Player> players;
-    public ArrayList<Player> getPlayers(){
-        return players;
-    };
 }

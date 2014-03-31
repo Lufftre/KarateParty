@@ -5,4 +5,7 @@ package kpRmk;
  */
 public abstract class AbstractPlayer {
     protected int number;
+    public int getNumber() {
+        return number;
+    }
 }

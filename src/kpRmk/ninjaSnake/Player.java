@@ -14,6 +14,7 @@ public class Player extends AbstractPlayer{
     private double rotateSpeed;
     private int gapLength;
     private int gapCounter;
+    private int speed;
 
     public Player(int playerNumber) {
         this.number = playerNumber;
@@ -23,15 +24,14 @@ public class Player extends AbstractPlayer{
         this.left = false;
         this.right = false;
         this.rotateSpeed = Math.PI/15;
+        this.speed = 3;
 
         this.gapCounter = 0;
         this.gapLength = 4;
 
     }
 
-    public int getNumber() {
-        return number;
-    }
+
 
     public double getX() {
         return position.getX();
@@ -51,6 +51,10 @@ public class Player extends AbstractPlayer{
 
     public int getGapCounter() {
         return gapCounter;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 
     public void setGapCounter(int gapCounter) {
