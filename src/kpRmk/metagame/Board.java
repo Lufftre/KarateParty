@@ -19,6 +19,11 @@ public class Board {
     private int diceVal;
 
     private int krystal;
+    private int KRYSTAL_PRICE;
+
+    private int tickSpeed;
+    private int tickCount;
+
 
     public Board(int nPlayers) {
         this.size = 50;
@@ -33,6 +38,10 @@ public class Board {
         this.currentPlayer = 0;
         this.diceVal = 0;
         newKrystal();
+
+        this.KRYSTAL_PRICE = 50;
+        this.tickSpeed = 15;
+        this.tickCount = tickSpeed;
     }
 
     private void addPlayers(int n){
@@ -72,6 +81,7 @@ public class Board {
     private void newKrystal(){
         krystal = random.nextInt(getSize());
     }
+
     public void newRound(int nWinner){
         for (Player player : players) {
             if(player.getNumber() == nWinner){ player.addKoins(10);break;}
@@ -79,32 +89,75 @@ public class Board {
         currentPlayer = 0;
     }
 
-    public boolean tick(PaintComponent component){
-        if(autoRoll!=0){
-            diceVal = random.nextInt(12) + 1;
-            component.boardChanged();
-            autoRoll--;
-        } else {
-            getCurrentPlayer().playerMove();
-            diceVal--;
-            component.boardChanged();
-
-            if(diceVal <= 0){
-                //Try buy krystal
-                if(getCurrentPlayer().getSteps()%size == krystal){
-                    if(getCurrentPlayer().getKoins() >= 20){
-                        getCurrentPlayer().addKrystal();
-                        getCurrentPlayer().removeKoins(20);
-                        newKrystal();
-                        component.boardChanged();
-                    }
-                }
-                currentPlayer++;
-                autoRoll = autoRollRate;
-                roll = false;
-                if(currentPlayer == getPlayers().size()) return true;
+    private void tryBuyKrystal(){
+        if(getCurrentPlayer().getSteps()%size == krystal){
+            if(getCurrentPlayer().getKoins() >= KRYSTAL_PRICE){
+                getCurrentPlayer().addKrystal();
+                getCurrentPlayer().removeKoins(KRYSTAL_PRICE);
+                newKrystal();
             }
+        }
+    }
+
+    private boolean roundDone(){
+        return currentPlayer == getPlayers().size();
+    }
+
+    private void preRoll(){
+        diceVal = random.nextInt(12) + 1;
+        autoRoll--;
+    }
+
+    private void moveTick(){
+        getCurrentPlayer().playerMove();
+        diceVal--;
+        tryBuyKrystal();
+    }
+
+    private void postRoll(){
+        currentPlayer++;
+        autoRoll = autoRollRate;
+        roll = false;
+    }
+
+    private boolean isWinner(){
+        if(getCurrentPlayer().getKrystals()>=5){
+            return true;
         }
         return false;
     }
+
+    private void winning(){
+        for (Player player : players) {
+            player.reset();
+        }
+        autoRoll = autoRollRate;
+        this.currentPlayer = 0;
+        roll = false;
+    }
+
+    public boolean tick(PaintComponent component){
+        if (autoRoll != 0) {
+            preRoll();
+            component.boardChanged();
+        } else {
+            if (tickCount == 0){
+                tickCount = tickSpeed;
+                moveTick();
+                if (isWinner()) {
+                    winning();
+                }
+                component.boardChanged();
+                if (diceVal <= 0) {
+                    postRoll();
+                    if (roundDone()) {
+                        return true;
+                    }
+                }
+            }
+            tickCount--;
+        }
+        return false;
+    }
+
 }

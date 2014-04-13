@@ -3,8 +3,13 @@ package kpRmk;
 import kpRmk.metagame.Board;
 import kpRmk.metagame.PaintComponent;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -29,8 +34,17 @@ public class KarateParty {
     private ArrayList<AbstractMinigame> miniBoards;
     private ArrayList<AbstractComponent> miniComponents;
 
+    private MainMenu mainMenu;
+    private MainMenuComponent mainMenuComponent;
+
     public KarateParty() {
         createFrame();
+        mainMenu();
+    }
+
+    public void startGame(){
+        frame.remove(mainMenu);
+        frame.remove(mainMenuComponent);
         createBoard();
         createMetaComponent();
         createActions();
@@ -38,6 +52,22 @@ public class KarateParty {
         createMiniGames();
         this.meta = true;
         this.random = new Random();
+    }
+
+    private void mainMenu(){
+        mainMenu = new MainMenu(this);
+        Image image = null;
+        try {
+            image = ImageIO.read(new File("src/kpRmk/meny.png"));
+        } catch (IOException ex) {
+            // handle exception...
+        }
+        frame.setPreferredSize(new Dimension(1000,840));
+        mainMenuComponent = new MainMenuComponent(image);
+        frame.add(mainMenu, BorderLayout.SOUTH);
+        frame.add(mainMenuComponent);
+        frame.pack();
+        mainMenuComponent.boardChanged();
 
     }
 
@@ -47,7 +77,7 @@ public class KarateParty {
 
 
         AbstractMinigame game;
-         /*
+
         game = new kpRmk.ninjaSnake.Board();
         miniBoards.add(game);
         miniComponents.add(new kpRmk.ninjaSnake.PaintComponent(game));

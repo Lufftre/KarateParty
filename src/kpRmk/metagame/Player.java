@@ -73,4 +73,10 @@ public class Player {
     public void playerMove(){
         this.steps++;
     }
+
+    public void reset(){
+        this.steps = 0;
+        this.koins = 0;
+        this.krystals = 0;
+    }
 }

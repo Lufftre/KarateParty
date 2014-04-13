@@ -27,7 +27,7 @@ public class Player extends AbstractPlayer{
         this.speed = 3;
 
         this.gapCounter = 0;
-        this.gapLength = 4;
+        this.gapLength = 5;
 
     }
 
