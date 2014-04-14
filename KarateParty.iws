@@ -6,15 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3be05e89-6fcc-46cd-bbd1-4a815263a430" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpRmk/MainMenu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpRmk/MainMenuComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/metagame/Board.java" afterPath="$PROJECT_DIR$/src/kpRmk/metagame/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KarateParty.ipr" afterPath="$PROJECT_DIR$/KarateParty.ipr" />
+    <list default="true" id="3be05e89-6fcc-46cd-bbd1-4a815263a430" name="Default" comment="+meny.png&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpRmk/meny.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KarateParty.iws" afterPath="$PROJECT_DIR$/KarateParty.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/KarateParty.java" afterPath="$PROJECT_DIR$/src/kpRmk/KarateParty.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/metagame/Player.java" afterPath="$PROJECT_DIR$/src/kpRmk/metagame/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java" afterPath="$PROJECT_DIR$/src/kpRmk/ninjaSnake/Player.java" />
     </list>
     <ignored path="KarateParty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,8 +75,8 @@
       <file leaf-file-name="KarateParty.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/KarateParty.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50108695" vertical-offset="1834" max-vertical-offset="2754">
-              <caret line="151" column="54" selection-start-line="151" selection-start-column="54" selection-end-line="151" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.4456522" vertical-offset="1834" max-vertical-offset="2754">
+              <caret line="147" column="33" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -111,7 +105,7 @@
       <file leaf-file-name="MainMenu.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpRmk/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="799">
+            <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="799">
               <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
               <folding />
             </state>
@@ -248,6 +242,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -344,7 +339,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -606,12 +600,16 @@
       <created>1396224392039</created>
       <updated>1396224392039</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="MainMenu:&#10;+MainMenu&#10;+MainMenuCompoenent&#10;+Start/exit buttons&#10;+Background image&#10;&#10;Metagame:&#10;+Players move slower&#10;+Increased krystal price&#10;+Game reset&#10;&#10;NinjaSnake:&#10;+Increased gap size&#10;&#10;&#10;">
+      <created>1397422709557</created>
+      <updated>1397422709557</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -670,7 +668,8 @@
     <MESSAGE value="Metagame able to transition to random minigame.&#10;NinjaSnake:&#10;+Board Reset&#10;+Players random startlocation&#10;+Snake gaps&#10;+Casting Paint Component&#10;SumoBird inc&#10;&#10;&#10;&#10;" />
     <MESSAGE value="Metagame able to transition to random minigame.&#10;&#10;NinjaSnake:&#10;+Board Reset&#10;+Players random startlocation&#10;+Snake gaps&#10;+Casting Paint Component&#10;&#10;SumoBird inc&#10;&#10;&#10;&#10;" />
     <MESSAGE value="Fps set to 60&#10;&#10;NinjaSnake:&#10;+Adjusted for 60fps&#10;&#10;SumoBird:&#10;+Board&#10;+PaintComponent&#10;+Player&#10;+Pipe&#10;&#10;AbstractMinigame:&#10;-ArrayList Players&#10;&#10;AbstractPlayer:&#10;+getNumber();" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fps set to 60&#10;&#10;NinjaSnake:&#10;+Adjusted for 60fps&#10;&#10;SumoBird:&#10;+Board&#10;+PaintComponent&#10;+Player&#10;+Pipe&#10;&#10;AbstractMinigame:&#10;-ArrayList Players&#10;&#10;AbstractPlayer:&#10;+getNumber();" />
+    <MESSAGE value="MainMenu:&#10;+MainMenu&#10;+MainMenuCompoenent&#10;+Start/exit buttons&#10;+Background image&#10;&#10;Metagame:&#10;+Players move slower&#10;+Increased krystal price&#10;+Game reset&#10;&#10;NinjaSnake:&#10;+Increased gap size&#10;&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="MainMenu:&#10;+MainMenu&#10;+MainMenuCompoenent&#10;+Start/exit buttons&#10;+Background image&#10;&#10;Metagame:&#10;+Players move slower&#10;+Increased krystal price&#10;+Game reset&#10;&#10;NinjaSnake:&#10;+Increased gap size&#10;&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1040,8 +1039,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kpRmk/KarateParty.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50108695" vertical-offset="1834" max-vertical-offset="2754">
-          <caret line="151" column="54" selection-start-line="151" selection-start-column="54" selection-end-line="151" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.4456522" vertical-offset="1834" max-vertical-offset="2754">
+          <caret line="147" column="33" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
           <folding />
         </state>
       </provider>
