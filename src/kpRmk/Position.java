@@ -1,3 +1,7 @@
+/**Holds both the doubles x and y coordinate.
+ * Can be used in several minigames.
+ * Currently used in NinjaSnake
+ */
 package kpRmk;
 
 /**

@@ -1,3 +1,7 @@
+/**
+ * Player Class for NinjaSnake
+ *
+ */
 package kpRmk.ninjaSnake;
 
 import kpRmk.AbstractPlayer;

@@ -1,8 +1,9 @@
+/**
+ * Abstract MiniGame Class
+ * tick method returns -1 until it returns the winning players player number
+ * resetBoard method to be called after minigame is over
+ */
 package kpRmk;
-
-import kpRmk.ninjaSnake.Player;
-
-import java.util.ArrayList;
 
 /**
  * Created by ludno249 on 2014-03-27.

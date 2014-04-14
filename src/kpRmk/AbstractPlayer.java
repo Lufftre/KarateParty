@@ -1,3 +1,7 @@
+/**
+ * Abstract Player Class to be used in all Mini Games.
+ * Contains a integer for playernumber.
+ */
 package kpRmk;
 
 /**

@@ -108,6 +108,7 @@ public class PaintComponent extends AbstractComponent {
         final Graphics2D g2d = (Graphics2D) g;
         int size = 10;
 
+        //Draw Bodies
         g2d.setColor(Color.GRAY);
         for (int x = 0; x < board.getWidth(); x++) {
             for (int y = 0; y < board.getHeight(); y++) {
@@ -117,6 +118,8 @@ public class PaintComponent extends AbstractComponent {
             }
 
         }
+
+        //Draw Heads
         for (Player player : board.getPlayers()) {
             if(player.isAlive()){
                 g2d.setColor(playerColorMap.get(player.getNumber()));

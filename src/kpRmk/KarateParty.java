@@ -1,3 +1,8 @@
+/**
+ * Main class.
+ * Administrational class.
+ * Holds all Minigames + Metagame + MainMenu and makes the transitions between them.
+ */
 package kpRmk;
 
 import kpRmk.metagame.Board;
@@ -42,6 +47,7 @@ public class KarateParty {
         mainMenu();
     }
 
+    //MainMenu StartPress
     public void startGame(){
         frame.remove(mainMenu);
         frame.remove(mainMenuComponent);
@@ -54,13 +60,14 @@ public class KarateParty {
         this.random = new Random();
     }
 
+    //Creates the Main menu.
     private void mainMenu(){
         mainMenu = new MainMenu(this);
         Image image = null;
         try {
             image = ImageIO.read(new File("src/kpRmk/meny.png"));
         } catch (IOException ex) {
-            // handle exception...
+            // #yolo
         }
         frame.setPreferredSize(new Dimension(1000,840));
         mainMenuComponent = new MainMenuComponent(image);
@@ -137,6 +144,7 @@ public class KarateParty {
         timer.start();
     }
 
+    //Pause program for n ms
     private void sleep(int n){
         try {
             Thread.sleep(n);
@@ -146,9 +154,10 @@ public class KarateParty {
     }
 
     private void createActions(){
+        //Main Loop
         this.tick = new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                if(meta){
+                if(meta){ //Meta round done
                     if(metaBoard.tick(metaComponent)){
                         meta = false;
                         initRandomMiniGame();
@@ -156,7 +165,7 @@ public class KarateParty {
                     }
                 } else {
                     miniWinner = miniBoard.tick(miniComponent);
-                    if(miniWinner != -1){
+                    if(miniWinner != -1){ //MInigame done
                         miniComponent.boardChanged();
                         meta = true;
                         setMetaComponent();

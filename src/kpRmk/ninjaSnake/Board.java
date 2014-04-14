@@ -26,6 +26,7 @@ public class Board extends AbstractMinigame
         this.random = new Random();
         this.height = 790;
         this.width = 790;
+
         this.map = new boolean[this.height][this.width];
         this.players = new ArrayList<>();
         this.player1 = new Player(0);
@@ -35,10 +36,16 @@ public class Board extends AbstractMinigame
         resetBoard();
 
     }
+    private int randomPosX(){
+        return random.nextInt(width -400)+200;
+    }
+    private int randomPosY(){
+        return random.nextInt(height -400)+200;
+    }
     public void resetBoard(){
         for (Player player : players) {
-            player.setX(random.nextInt(width -400)+200);
-            player.setY(random.nextInt(height -400)+200);
+            player.setX(randomPosX());
+            player.setY(randomPosY());
             player.setAlive(true);
             player.setLeft(false);
             player.setRight(false);
@@ -104,6 +111,7 @@ public class Board extends AbstractMinigame
 	}
     }
 
+    //Creates outside border
     private void createOutside(){
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y += height-1) {

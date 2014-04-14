@@ -1,3 +1,7 @@
+/**
+ * Main menu panel.
+ * Contains a JPanel with start and exit buttons.
+ */
 package kpRmk;
 
 import javax.imageio.ImageIO;
@@ -16,6 +20,7 @@ public class MainMenu extends JPanel implements ActionListener {
     protected JPanel panel;
     protected KarateParty karateParty;
 
+    //Takes KarateParty object for startGame press.
     public MainMenu(KarateParty kp){
         panel = new JPanel(new GridLayout(0, 1));
         panel.setPreferredSize(new Dimension(200,200));

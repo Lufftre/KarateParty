@@ -1,3 +1,8 @@
+/**
+ * Was used earlier.
+ * Not in use.
+ *
+ */
 package kpRmk;
 
 import kpRmk.ninjaSnake.Player;

@@ -1,3 +1,10 @@
+/**
+ * Abstract Component Class
+ * Used for all component classes.
+ * Default font, HashMap with all(both) player colors.
+ * Tilesize currently not used(?)
+ * PreferredSize dimension currently set to 1000x800
+ */
 package kpRmk;
 
 import javax.swing.*;

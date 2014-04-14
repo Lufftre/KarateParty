@@ -1,3 +1,6 @@
+/**
+ * Draws the background for the main menu.
+ */
 package kpRmk;
 
 import javax.swing.*;
