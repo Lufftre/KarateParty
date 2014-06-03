@@ -1,9 +1,8 @@
-package kpRmk.ninjaSnake;
+package karataparty.judojuking;
 
-import kpRmk.AbstractComponent;
-import kpRmk.AbstractMinigame;
-import kpRmk.Minigame;
-import kpRmk.Position;
+import karataparty.AbstractComponent;
+import karataparty.AbstractMinigame;
+import karataparty.Position;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,11 +18,19 @@ public class PaintComponent extends AbstractComponent {
     private Action leftRelease;
     private Action rightPress;
     private Action rightRelease;
+    private Action upPress;
+    private Action upRelease;
+    private Action downPress;
+    private Action downRelease;
 
     private Action aPress;
     private Action aRelease;
     private Action dPress;
     private Action dRelease;
+    private Action wPress;
+    private Action wRelease;
+    private Action sPress;
+    private Action sRelease;
 
 
     public PaintComponent(AbstractMinigame board) {
@@ -44,6 +51,16 @@ public class PaintComponent extends AbstractComponent {
         this.getActionMap().put("pressedRight", this.rightPress);
         this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("released RIGHT"), "releasedRight");
         this.getActionMap().put("releasedRight", this.rightRelease);
+        //Up
+        this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("pressed UP"), "pressedUp");
+        this.getActionMap().put("pressedUp", this.upPress);
+        this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("released UP"), "releasedUp");
+        this.getActionMap().put("releasedUp", this.upRelease);
+        //Down
+        this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("pressed DOWN"), "pressedDown");
+        this.getActionMap().put("pressedDown", this.downPress);
+        this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("released DOWN"), "releasedDown");
+        this.getActionMap().put("releasedDown", this.downRelease);
         //A
         this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("pressed A"), "pressedA");
         this.getActionMap().put("pressedA", this.aPress);
@@ -54,6 +71,16 @@ public class PaintComponent extends AbstractComponent {
         this.getActionMap().put("pressedD", this.dPress);
         this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("released D"), "releasedD");
         this.getActionMap().put("releasedD", this.dRelease);
+        //W
+        this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("pressed W"), "pressedW");
+        this.getActionMap().put("pressedW", this.wPress);
+        this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("released W"), "releasedW");
+        this.getActionMap().put("releasedW", this.wRelease);
+        //S
+        this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("pressed S"), "pressedS");
+        this.getActionMap().put("pressedS", this.sPress);
+        this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("released S"), "releasedS");
+        this.getActionMap().put("releasedS", this.sRelease);
     }
 
     private void createActions(){
@@ -79,6 +106,28 @@ public class PaintComponent extends AbstractComponent {
     board.rightRelease();
           }
       };
+        //UP
+        this.upPress = new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+		board.upPress();
+            }
+        };
+	    this.upRelease = new AbstractAction() {
+	            public void actionPerformed(ActionEvent e) {
+			board.upRelease();
+	            }
+	        };
+        //DOWN
+        this.downPress = new AbstractAction() {
+         public void actionPerformed(ActionEvent e) {
+    board.downPress();
+         }
+     };
+        this.downRelease = new AbstractAction() {
+          public void actionPerformed(ActionEvent e) {
+    board.downRelease();
+          }
+      };
         //A
         this.aPress = new AbstractAction() {
          public void actionPerformed(ActionEvent e) {
@@ -101,23 +150,34 @@ public class PaintComponent extends AbstractComponent {
     board.dRelease();
           }
       };
+        //W
+        this.wPress = new AbstractAction() {
+         public void actionPerformed(ActionEvent e) {
+    board.wPress();
+         }
+     };
+        this.wRelease = new AbstractAction() {
+          public void actionPerformed(ActionEvent e) {
+    board.wRelease();
+          }
+      };
+        //S
+        this.sPress = new AbstractAction() {
+         public void actionPerformed(ActionEvent e) {
+    board.sPress();
+         }
+     };
+        this.sRelease = new AbstractAction() {
+          public void actionPerformed(ActionEvent e) {
+    board.sRelease();
+          }
+      };
     }
 
     @Override
     public void paintComponent(Graphics g){
         final Graphics2D g2d = (Graphics2D) g;
         int size = 10;
-
-        //Draw Bodies
-        g2d.setColor(Color.GRAY);
-        for (int x = 0; x < board.getWidth(); x++) {
-            for (int y = 0; y < board.getHeight(); y++) {
-                if(board.getMapPoint(new Position(x,y))){
-                    g2d.fillOval(x, y, size, size);
-                }
-            }
-
-        }
 
         //Draw Heads
         for (Player player : board.getPlayers()) {
@@ -126,7 +186,7 @@ public class PaintComponent extends AbstractComponent {
             } else {
                 g2d.setColor(Color.GRAY);
             }
-            g2d.fillOval((int) player.getX(), (int) player.getY(), size, size);
+            g2d.fillRect((int) player.getX(), (int) player.getY(), size, size);
         }
 
 

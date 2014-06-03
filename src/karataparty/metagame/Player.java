@@ -1,6 +1,4 @@
-package kpRmk.metagame;
-
-import java.awt.*;
+package karataparty.metagame;
 
 /**
  * Created by the karatekidz on 26/03/14.
@@ -19,7 +17,7 @@ public class Player {
         this.koins = 0;
         this.krystals = 0;
         this.number = playerNumber;
-        this.name = "Player" + String.valueOf(playerNumber);
+        this.name = "Player" + playerNumber;
 
     }
 
@@ -43,18 +41,6 @@ public class Player {
         return number;
     }
 
-    public void setSteps(int n) {
-        this.steps = n;
-    }
-
-    public void setKoins(int n) {
-        this.koins = n;
-    }
-
-    public void setKrystals(int n) {
-        this.krystals = n;
-    }
-
     public void addKoins(int n){
         this.koins += n;
     }
@@ -67,9 +53,6 @@ public class Player {
         this.krystals++;
     }
 
-    public void removeKrystals(int n){
-        this.krystals -= n;
-    }
     public void playerMove(){
         this.steps++;
     }

@@ -3,20 +3,20 @@
  * Administrational class.
  * Holds all Minigames + Metagame + MainMenu and makes the transitions between them.
  */
-package kpRmk;
+package karataparty;
 
-import kpRmk.metagame.Board;
-import kpRmk.metagame.PaintComponent;
+import karataparty.metagame.Board;
+import karataparty.metagame.PaintComponent;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
+import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created by the karatekidz on 26/03/14.
@@ -24,20 +24,20 @@ import java.util.Random;
 public class KarateParty {
     private JFrame frame;
 
-    private PaintComponent metaComponent;
-    private AbstractComponent miniComponent;
+    private PaintComponent metaComponent = null;
+    private AbstractComponent miniComponent = null;
 
-    private Board metaBoard;
-    private AbstractMinigame miniBoard;
-    private Timer timer;
-    private Action tick;
+    private Board metaBoard = null;
+    private AbstractMinigame miniBoard = null;
+    private Timer timer = null;
+    private Action tick = null;
 
     private boolean meta;
-    private Random random;
+    private Random random = null;
     private int miniWinner;
 
-    private ArrayList<AbstractMinigame> miniBoards;
-    private ArrayList<AbstractComponent> miniComponents;
+    private java.util.List<AbstractMinigame> miniBoards = null;
+    private List<AbstractComponent> miniComponents = null;
 
     private MainMenu mainMenu;
     private MainMenuComponent mainMenuComponent;
@@ -65,9 +65,11 @@ public class KarateParty {
         mainMenu = new MainMenu(this);
         Image image = null;
         try {
-            image = ImageIO.read(new File("src/kpRmk/meny.png"));
-        } catch (IOException ex) {
-            // #yolo
+            //noinspection HardcodedFileSeparator
+            image = ImageIO.read(new File("src/karataparty/meny.png"));
+        } catch (IOException ex){
+            //noinspection ThrowablePrintedToSystemOut
+            System.out.println(ex);
         }
         frame.setPreferredSize(new Dimension(1000,840));
         mainMenuComponent = new MainMenuComponent(image);
@@ -84,21 +86,23 @@ public class KarateParty {
 
 
         AbstractMinigame game;
+    /*
+        game = new karataparty.ninjasnake.Board();
+        miniBoards.add(game);
+        miniComponents.add(new karataparty.ninjasnake.PaintComponent(game));
 
-        game = new kpRmk.ninjaSnake.Board();
+        game = new karataparty.sumobird.Board();
         miniBoards.add(game);
-        miniComponents.add(new kpRmk.ninjaSnake.PaintComponent(game));
-       // */
-      //  /*
-        game = new kpRmk.sumoBird.Board();
+        miniComponents.add(new karataparty.sumobird.PaintComponent(game));
+     */
+        game = new karataparty.judojuking.Board();
         miniBoards.add(game);
-        miniComponents.add(new kpRmk.sumoBird.PaintComponent(game));
-       // */
+        miniComponents.add(new karataparty.judojuking.PaintComponent(game));
     }
 
     private void initRandomMiniGame(){
         int n = random.nextInt(miniBoards.size());
-        setMiniBoard(miniBoards.get(n));
+        miniBoard = miniBoards.get(n);
         setMiniComponent(miniComponents.get(n));
     }
     private void createBoard(){
@@ -112,7 +116,7 @@ public class KarateParty {
     private void createMetaComponent(){
         metaComponent = new PaintComponent(this.metaBoard);
         frame.add(metaComponent);
-        metaComponent.setPreferredSize(metaComponent.getPreferredSize(metaBoard.getSize()));
+        metaComponent.setPreferredSize(metaComponent.getPreferredSize());
 
         frame.pack();
     }
@@ -122,18 +126,15 @@ public class KarateParty {
         frame.remove(metaComponent);
         frame.add(miniComponent);
 
-        miniComponent.setPreferredSize(miniComponent.getPreferredSize(metaBoard.getSize()));
+        miniComponent.setPreferredSize(miniComponent.getPreferredSize());
         frame.pack();
-    }
-    private void setMiniBoard(AbstractMinigame minigame){
-        this.miniBoard = minigame;
     }
 
     private void setMetaComponent(){
         frame.remove(miniComponent);
         frame.add(metaComponent);
 
-        metaComponent.setPreferredSize(metaComponent.getPreferredSize(metaBoard.getSize()));
+        metaComponent.setPreferredSize(metaComponent.getPreferredSize());
         frame.pack();
     }
 
@@ -149,6 +150,8 @@ public class KarateParty {
         try {
             Thread.sleep(n);
         } catch(InterruptedException ex) {
+            //noinspection ThrowablePrintedToSystemOut
+            System.out.println(ex);
             Thread.currentThread().interrupt();
         }
     }
@@ -179,6 +182,7 @@ public class KarateParty {
     }
 
     public static void main(String[] args) {
+        //noinspection ResultOfObjectAllocationIgnored
         new KarateParty();
     }
 }

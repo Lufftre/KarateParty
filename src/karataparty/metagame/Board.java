@@ -1,6 +1,7 @@
-package kpRmk.metagame;
+package karataparty.metagame;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -8,18 +9,18 @@ import java.util.Random;
  */
 public class Board {
 
-    private ArrayList<Player> players;
+    private List<Player> players;
     private int size;
     private Random random;
 
-    private boolean roll;
+    // --Commented out by Inspection (2014-05-16 13:55):private boolean roll;
     private int autoRoll;
     private int autoRollRate;
     private int currentPlayer;
     private int diceVal;
 
     private int krystal;
-    private int KRYSTAL_PRICE;
+    private int krystalPrice;
 
     private int tickSpeed;
     private int tickCount;
@@ -32,15 +33,15 @@ public class Board {
         addPlayers(nPlayers);
 
         this.random = new Random();
-        this.roll = false;
+        //this.roll = false;
         this.autoRollRate = 30;
         this.autoRoll = autoRollRate;
         this.currentPlayer = 0;
         this.diceVal = 0;
         newKrystal();
 
-        this.KRYSTAL_PRICE = 50;
-        this.tickSpeed = 15;
+        this.krystalPrice = 50;
+        this.tickSpeed = 8;
         this.tickCount = tickSpeed;
     }
 
@@ -50,7 +51,7 @@ public class Board {
         }
     }
 
-    public ArrayList<Player> getPlayers() {
+    public List<Player> getPlayers() {
         return players;
     }
 
@@ -58,9 +59,11 @@ public class Board {
         return size;
     }
 
-    public int getCurrentPlayerNumber() {
-        return currentPlayer;
-    }
+// --Commented out by Inspection START (2014-05-16 13:56):
+//    public int getCurrentPlayerNumber() {
+//        return currentPlayer;
+//    }
+// --Commented out by Inspection STOP (2014-05-16 13:56)
 
     public Player getCurrentPlayer(){
         return players.get(currentPlayer);
@@ -74,12 +77,13 @@ public class Board {
         return krystal;
     }
 
-    public void spacePress(){
+    /*public void spacePress(){
         roll = true;
     }
+    */
 
     private void newKrystal(){
-        krystal = random.nextInt(getSize());
+        krystal = random.nextInt(size);
     }
 
     public void newRound(int nWinner){
@@ -91,16 +95,16 @@ public class Board {
 
     private void tryBuyKrystal(){
         if(getCurrentPlayer().getSteps()%size == krystal){
-            if(getCurrentPlayer().getKoins() >= KRYSTAL_PRICE){
+            if(getCurrentPlayer().getKoins() >= krystalPrice){
                 getCurrentPlayer().addKrystal();
-                getCurrentPlayer().removeKoins(KRYSTAL_PRICE);
+                getCurrentPlayer().removeKoins(krystalPrice);
                 newKrystal();
             }
         }
     }
 
     private boolean roundDone(){
-        return currentPlayer == getPlayers().size();
+        return currentPlayer == players.size();
     }
 
     private void preRoll(){
@@ -117,7 +121,7 @@ public class Board {
     private void postRoll(){
         currentPlayer++;
         autoRoll = autoRollRate;
-        roll = false;
+        //roll = false;
     }
 
     private boolean isWinner(){
@@ -133,7 +137,7 @@ public class Board {
         }
         autoRoll = autoRollRate;
         this.currentPlayer = 0;
-        roll = false;
+        //roll = false;
     }
 
     public boolean tick(PaintComponent component){

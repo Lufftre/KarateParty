@@ -1,9 +1,8 @@
 /**
  * Draws the background for the main menu.
  */
-package kpRmk;
+package karataparty;
 
-import javax.swing.*;
 import java.awt.*;
 
 /**
