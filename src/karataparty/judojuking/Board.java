@@ -20,7 +20,10 @@ public class Board extends AbstractMinigame
     private int winner;
     private Random random;
     private List<Player> players;
+    private List<Enemy> enemies;
     private Player player1,player2;
+    private final int spawnDelay;
+    private int spawnCounter;
 
 
     public Board() {
@@ -33,6 +36,11 @@ public class Board extends AbstractMinigame
         this.player2 = new Player(1);
         players.add(player1);
         players.add(player2);
+
+        this.enemies = new ArrayList<>();
+        enemies.add(new Enemy(new Position(0,0)));
+        this.spawnDelay = 500;
+        this.spawnCounter = 100;
         resetBoard();
 
     }
@@ -49,7 +57,11 @@ public class Board extends AbstractMinigame
             player.setAlive(true);
             player.setLeft(false);
             player.setRight(false);
+            player.setUp(false);
+            player.setDown(false);
         }
+        this.enemies = new ArrayList<>();
+        this.spawnCounter = 100;
         this.winner = -1;
     }
 
@@ -63,6 +75,10 @@ public class Board extends AbstractMinigame
 
     public Iterable<Player> getPlayers(){
         return players;
+    }
+
+    public List<Enemy> getEnemies() {
+        return enemies;
     }
 
     public void leftPress(){
@@ -140,9 +156,18 @@ public class Board extends AbstractMinigame
         if(winner != -1){
             return winner;
         }
+        spawnCounter--;
+        if(spawnCounter == 0){
+            spawnCounter = spawnDelay;
+            enemies.add(new Enemy(new Position(0,0)));
+        }
         Collections.shuffle(players);
         for (Player player : players) {
             playerTick(player);
+        }
+        for (Enemy enemy : enemies) {
+            enemy.tick(players);
+            checkWinner();
         }
         component.boardChanged();
         return -1;
@@ -151,8 +176,8 @@ public class Board extends AbstractMinigame
     private void playerTick(Player player){
         if(player.isAlive()){
             checkOB(player);
-
             player.tick();
+            checkPlayerCollide(player);
 
         }
     }
@@ -173,6 +198,22 @@ public class Board extends AbstractMinigame
         if(player.getY()>height-10){
             player.invertYspeed();
             player.setY(height-10);
+        }
+    }
+
+    private void checkPlayerCollide(Player player){
+        for (Player p : players) {
+            if(p.getNumber()!=player.getNumber()){
+                if(p.getX()>player.getX()-p.getSize() && p.getX()<player.getX()+player.getSize()){
+                    if(p.getY()>player.getY()-p.getSize() && p.getY()<player.getY()+player.getSize()){
+                        p.addSpeedX(player.getSpeedX()*0.95);
+                        p.addSpeedY(player.getSpeedY()*0.95);
+                        player.setSpeedX(player.getSpeedX()*0.25);
+                        player.setSpeedY(player.getSpeedY()*0.25);
+
+                    }
+                }
+            }
         }
     }
 }

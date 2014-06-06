@@ -177,16 +177,21 @@ public class PaintComponent extends AbstractComponent {
     @Override
     public void paintComponent(Graphics g){
         final Graphics2D g2d = (Graphics2D) g;
-        int size = 10;
+        g2d.setColor(Color.BLACK);
+        g2d.fillRect(0,0,800,800);
 
-        //Draw Heads
         for (Player player : board.getPlayers()) {
             if(player.isAlive()){
                 g2d.setColor(playerColorMap.get(player.getNumber()));
             } else {
                 g2d.setColor(Color.GRAY);
             }
-            g2d.fillRect((int) player.getX(), (int) player.getY(), size, size);
+            g2d.fillRect((int) player.getX(), (int) player.getY(), player.getSize(), player.getSize());
+        }
+
+        for (Enemy enemy : board.getEnemies()) {
+            g2d.setColor(Color.RED);
+            g2d.fillRect((int) enemy.getX(), (int) enemy.getY(), enemy.getSize(), enemy.getSize());
         }
 
 

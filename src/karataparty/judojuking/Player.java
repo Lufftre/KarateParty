@@ -13,6 +13,7 @@ import karataparty.Position;
 public class Player extends AbstractPlayer{
     private Position position;
     private boolean alive;
+    private int size;
     private boolean left, right, up, down;
     private double speed;
     private double speedX, speedY;
@@ -30,6 +31,7 @@ public class Player extends AbstractPlayer{
         this.speedX = 0;
         this.speedY = 0;
         this.friction = 1.2;
+        this.size = 20;
     }
 
 
@@ -56,6 +58,10 @@ public class Player extends AbstractPlayer{
 
     public boolean isRight() {
 	return right;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public boolean isUp() {
@@ -106,11 +112,11 @@ public class Player extends AbstractPlayer{
         this.speed = speed;
     }
 
-    public void setSpeedX(int speedX) {
+    public void setSpeedX(double speedX) {
         this.speedX = speedX;
     }
 
-    public void setSpeedY(int speedY) {
+    public void setSpeedY(double speedY) {
         this.speedY = speedY;
     }
 
@@ -121,10 +127,12 @@ public class Player extends AbstractPlayer{
     public void moveX(double x){
         this.setX(this.position.getX() + x);
     }
-
     public void moveY(double y){
         this.setY(this.position.getY() + y);
     }
+
+    public void addSpeedX(double x){this.setSpeedX(this.speedX + x);}
+    public void addSpeedY(double y){this.setSpeedY(this.speedY + y);}
 
     public void invertXspeed(){speedX*=-1;}
     public void invertYspeed(){speedY*=-1;}
@@ -134,7 +142,6 @@ public class Player extends AbstractPlayer{
         if(this.right){speedX+=speed;}
         if(this.up){speedY-=speed;}
         if(this.down){speedY+=speed;}
-
         moveX(speedX);
         moveY(speedY);
 
