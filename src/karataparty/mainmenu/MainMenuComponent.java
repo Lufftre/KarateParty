@@ -1,7 +1,9 @@
 /**
  * Draws the background for the main menu.
  */
-package karataparty;
+package karataparty.mainmenu;
+
+import karataparty.AbstractComponent;
 
 import java.awt.*;
 

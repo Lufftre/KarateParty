@@ -2,7 +2,9 @@
  * Main menu panel.
  * Contains a JPanel with start and exit buttons.
  */
-package karataparty;
+package karataparty.mainmenu;
+
+import karataparty.KarateParty;
 
 import javax.swing.*;
 import java.awt.*;
