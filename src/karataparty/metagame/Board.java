@@ -1,5 +1,7 @@
 package karataparty.metagame;
 
+import karataparty.AbstractMinigame;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -13,7 +15,6 @@ public class Board {
     private int size;
     private Random random;
 
-    // --Commented out by Inspection (2014-05-16 13:55):private boolean roll;
     private int autoRoll;
     private int autoRollRate;
     private int currentPlayer;
@@ -25,8 +26,15 @@ public class Board {
     private int tickSpeed;
     private int tickCount;
 
+    private final int nRounds;
+    private int currentRound;
+
+    private AbstractMinigame nextMiniGame;
+
 
     public Board(int nPlayers) {
+        this.nRounds = 25;
+        this.currentRound = 0;
         this.size = 50;
         this.random = new Random();
         players = new ArrayList<>();
@@ -51,6 +59,11 @@ public class Board {
         }
     }
 
+    public void setNextMiniGame(AbstractMinigame miniGame){
+        nextMiniGame = miniGame;
+    }
+    public AbstractMinigame getNextMiniGame(){ return nextMiniGame; }
+
     public List<Player> getPlayers() {
         return players;
     }
@@ -58,12 +71,6 @@ public class Board {
     public int getSize() {
         return size;
     }
-
-// --Commented out by Inspection START (2014-05-16 13:56):
-//    public int getCurrentPlayerNumber() {
-//        return currentPlayer;
-//    }
-// --Commented out by Inspection STOP (2014-05-16 13:56)
 
     public Player getCurrentPlayer(){
         return players.get(currentPlayer);
@@ -76,6 +83,12 @@ public class Board {
     public int getKrystal() {
         return krystal;
     }
+
+    public int getnRounds(){ return nRounds; }
+
+    public int getCurrentRound(){ return currentRound; }
+
+    public void addRound(){ currentRound++;}
 
     /*public void spacePress(){
         roll = true;

@@ -216,4 +216,7 @@ public class Board extends AbstractMinigame
             }
         }
     }
+    public String toString(){
+        return "Judo Juking";
+    }
 }

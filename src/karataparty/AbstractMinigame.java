@@ -11,5 +11,6 @@ package karataparty;
 public abstract class AbstractMinigame{
     public abstract int tick(AbstractComponent component);
     public abstract void resetBoard();
+    public abstract String toString();
 
 }

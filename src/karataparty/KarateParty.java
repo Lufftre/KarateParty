@@ -61,6 +61,7 @@ public class KarateParty {
         this.mainmenu = false;
         this.meta = true;
         this.random = new Random();
+        determineNextMiniGame();
     }
 
     //Creates the Main menu.
@@ -107,9 +108,14 @@ public class KarateParty {
     }
 
     private void initRandomMiniGame(){
+        frame.remove(metaComponent);
+    }
+
+    private void determineNextMiniGame(){
         int n = random.nextInt(miniBoards.size());
         miniBoard = miniBoards.get(n);
         setMiniComponent(miniComponents.get(n));
+        metaBoard.setNextMiniGame(miniBoard);
     }
     private void createBoard(){
         this.metaBoard = new Board(2);
@@ -125,18 +131,20 @@ public class KarateParty {
         final JMenuItem quit = new JMenuItem("Main Menu", 'Q');
         file.add(quit);
 
-        final JMenuBar bar = new JMenuBar();
-        bar.add(file);
-        frame.setJMenuBar(bar);
+        final JMenuBar menuBar = new JMenuBar();
+        menuBar.add(file);
+        frame.setJMenuBar(menuBar);
 
         quit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int answer = JOptionPane.showConfirmDialog(frame, "Quit to Main Menu?","niggawhat?", JOptionPane.YES_NO_OPTION);
-                if(answer == JOptionPane.YES_OPTION){resetAll();mainMenu();}
+                if(answer == JOptionPane.YES_OPTION){goToMainMenu();}
             }
         });
     }
+
+    private void goToMainMenu(){resetAll();mainMenu();}
 
     private void createMetaComponent(){
         metaComponent = new PaintComponent(this.metaBoard);
@@ -148,7 +156,7 @@ public class KarateParty {
 
     private void setMiniComponent(AbstractComponent component){
         this.miniComponent = component;
-        frame.remove(metaComponent);
+        //frame.remove(metaComponent);
         frame.add(miniComponent);
 
         miniComponent.setPreferredSize(miniComponent.getPreferredSize());
@@ -187,8 +195,9 @@ public class KarateParty {
             public void actionPerformed(ActionEvent e) {
                 if(mainmenu){
                     mainMenuComponent.boardChanged();
-                } else if(meta){ //Meta round done
-                    if(metaBoard.tick(metaComponent)){
+                } else if(meta){
+
+                    if(metaBoard.tick(metaComponent)){ //Meta round done
                         meta = false;
                         initRandomMiniGame();
                         sleep(1000);
@@ -202,6 +211,11 @@ public class KarateParty {
                         metaBoard.newRound(miniWinner);
                         miniBoard.resetBoard();
                         sleep(1000);
+                        determineNextMiniGame();
+                        metaBoard.addRound();
+                        if(metaBoard.getCurrentRound() >= metaBoard.getnRounds()) {
+                            goToMainMenu();
+                        }
                     }
                 }
             }
@@ -215,6 +229,7 @@ public class KarateParty {
         miniComponent = null;
         metaBoard = null;
         miniBoard = null;
+        timer.stop();
         timer = null;
         tick = null;
         meta = false;

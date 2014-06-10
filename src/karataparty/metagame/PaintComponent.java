@@ -9,10 +9,23 @@ import java.awt.*;
  */
 public class PaintComponent extends AbstractComponent {
     private Board board;
+    private final int boardWidth, boardHeight;
+    private final int scoreboardWidth;
+    private final int centerPosX, centerPosY;
+    private Graphics2D g2d;
+    private boolean doPrint;
     //private Action space;
 
     public PaintComponent(Board board){
         this.board = board;
+        this.boardWidth = 800;
+        this.boardHeight = 800;
+        this.scoreboardWidth = 200;
+
+        this.centerPosX = boardWidth/2;
+        this.centerPosY = boardHeight/2;
+        this.doPrint = false;
+
         //createActions();
        // createKeybinds();
     }
@@ -32,16 +45,19 @@ public class PaintComponent extends AbstractComponent {
     }
     */
 
+    public void announceMinigame(){
+        doPrint = true;
+    }
 
     @Override
     protected void paintComponent(Graphics g) {
-        final Graphics2D g2d = (Graphics2D) g;
+        this.g2d = (Graphics2D) g;
 
         g2d.setColor(Color.BLACK);
-        g2d.fillRect(0,0,800,800);
+        g2d.fillRect(0,0,boardWidth,boardHeight);
         //Draw board
         double radians = 2*Math.PI / board.getSize();
-        int radiusBig = (int)((800/2) - (((800/2)*Math.PI)/board.getSize()));
+        int radiusBig = (int)((boardWidth/2) - (((boardWidth/2)*Math.PI)/board.getSize()));
         int radiusSmall = (int)((radiusBig*Math.PI)/board.getSize());
         for (int i = 0; i < board.getSize(); i++) {
 
@@ -50,7 +66,7 @@ public class PaintComponent extends AbstractComponent {
 
 
             g2d.setColor(Color.WHITE);
-            g2d.drawOval(x + ((800/2)-radiusSmall), y + ((800/2)-radiusSmall), radiusSmall*2, radiusSmall*2);
+            g2d.drawOval(x + ((boardWidth/2)-radiusSmall), y + ((boardHeight/2)-radiusSmall), radiusSmall*2, radiusSmall*2);
 
         }
 
@@ -83,6 +99,12 @@ public class PaintComponent extends AbstractComponent {
         g2d.setColor(Color.WHITE);
         g2d.drawRect(40,10,50,50);
         g2d.drawString(String.valueOf(board.getDiceVal()), 50,50);
+
+        //Draw round number
+        g2d.setColor(Color.RED);
+        g2d.drawString(String.valueOf(board.getnRounds() - board.getCurrentRound()), centerPosX,centerPosY);
+        g2d.setColor(Color.WHITE);
+        g2d.drawString(board.getNextMiniGame().toString(),centerPosX,centerPosY+100);
 
     }
 }

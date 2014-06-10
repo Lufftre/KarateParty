@@ -59,7 +59,7 @@ public class Enemy {
     }
 
     public void tick(List<Player> players){
-        double dist = -1;
+        double dist = 0;
         for (Player player : players) {
             if(player.getX()>getX()-player.getSize() && player.getX()<getX()+getSize()){
             if(player.getY()>getY()-player.getSize() && player.getY()<getY()+getSize()){
@@ -67,7 +67,7 @@ public class Enemy {
                 }
             }
             if(player.isAlive()) {
-                if (getDistance(player) < dist || dist == -1) {
+                if (getDistance(player) < dist || dist == 0) {
                     dist = getDistance(player);
                     target = player.getNumber();
                     targetAngle = getTargetAngle(player);

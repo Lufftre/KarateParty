@@ -2,7 +2,6 @@ package karataparty.judojuking;
 
 import karataparty.AbstractComponent;
 import karataparty.AbstractMinigame;
-import karataparty.Position;
 
 import javax.swing.*;
 import java.awt.*;
