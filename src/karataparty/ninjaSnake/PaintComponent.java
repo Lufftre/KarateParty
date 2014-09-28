@@ -33,7 +33,7 @@ public class PaintComponent extends AbstractComponent {
 
 
     private void createKeybinds(){
-        //Left
+	    //Left
         this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("pressed LEFT"), "pressedLeft");
         this.getActionMap().put("pressedLeft", this.leftPress);
         this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("released LEFT"), "releasedLeft");
@@ -56,50 +56,50 @@ public class PaintComponent extends AbstractComponent {
     }
 
     private void createActions(){
-        //LEFT
+	    //LEFT
         this.leftPress = new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
-                board.leftPress();
+		board.leftPress();
             }
         };
-        this.leftRelease = new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                board.leftRelease();
-            }
-        };
+	    this.leftRelease = new AbstractAction() {
+	            public void actionPerformed(ActionEvent e) {
+			board.leftRelease();
+	            }
+	        };
         //RIGHT
         this.rightPress = new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                board.rightPress();
-            }
-        };
+         public void actionPerformed(ActionEvent e) {
+    board.rightPress();
+         }
+     };
         this.rightRelease = new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                board.rightRelease();
-            }
-        };
+          public void actionPerformed(ActionEvent e) {
+    board.rightRelease();
+          }
+      };
         //A
         this.aPress = new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                board.aPress();
-            }
-        };
+         public void actionPerformed(ActionEvent e) {
+    board.aPress();
+         }
+     };
         this.aRelease = new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                board.aRelease();
-            }
-        };
+          public void actionPerformed(ActionEvent e) {
+    board.aRelease();
+          }
+      };
         //D
         this.dPress = new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                board.dPress();
-            }
-        };
+         public void actionPerformed(ActionEvent e) {
+    board.dPress();
+         }
+     };
         this.dRelease = new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                board.dRelease();
-            }
-        };
+          public void actionPerformed(ActionEvent e) {
+    board.dRelease();
+          }
+      };
     }
 
     @Override

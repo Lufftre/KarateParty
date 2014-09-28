@@ -21,6 +21,7 @@ public class Player extends AbstractPlayer{
     private int speed;
 
     public Player(int playerNumber) {
+        //noinspection AssignmentToSuperclassField
         this.number = playerNumber;
         this.position = new Position(0,0);
         this.angle = 0;
@@ -87,10 +88,6 @@ public class Player extends AbstractPlayer{
 
     public void setY(double y) {
         this.position.setY(y);
-    }
-
-    public void setAngle(double angle) {
-	this.angle = angle;
     }
 
     public void setLeft(final boolean left) {

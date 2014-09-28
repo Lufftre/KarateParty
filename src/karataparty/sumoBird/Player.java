@@ -14,11 +14,12 @@ public class Player extends AbstractPlayer {
     private boolean alive;
 
     public Player(int playerNumber){
+        //noinspection AssignmentToSuperclassField
         this.number = playerNumber;
-        this.y = 0;
+        this.y = 100;
         this.width = 25;
         this.height = 25;
-        this.speed = 0;
+        this.speed = -10;
         this.alive = true;
         this.maxSpeed = 40;
     }
@@ -42,12 +43,7 @@ public class Player extends AbstractPlayer {
     public void setY(int y) {
         this.y = y;
     }
-    public void setWidth(int width) {
-        this.width = width;
-    }
-    public void setHeight(int height) {
-        this.height = height;
-    }
+
     public void setSpeed(int speed) {
         this.speed = speed;
     }

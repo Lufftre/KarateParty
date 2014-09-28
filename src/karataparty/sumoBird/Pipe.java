@@ -29,13 +29,6 @@ public class Pipe {
         return gapHeight;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-    public void setGapY(int gapY) {
-        this.gapY = gapY;
-    }
-
     public void moveX(int x){
         this.x += x;
     }

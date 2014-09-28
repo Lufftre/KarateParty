@@ -3,18 +3,15 @@ package karataparty.sumobird;
 import karataparty.AbstractComponent;
 import karataparty.AbstractMinigame;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by the karatekidz on 29/03/14.
  */
 public class Board extends AbstractMinigame {
 
-    private ArrayList<Player> players;
-    private ArrayList<Pipe> pipes;
+    private List<Player> players;
+    private List<Pipe> pipes;
     private Random random;
     private int pipeRate;
     private int pipeCounter;
@@ -22,7 +19,7 @@ public class Board extends AbstractMinigame {
     private int pipeSpeed;
     private int fallSpeed;
     private int winner;
-    private Player player1,player2,player3,player4;
+    private Player player1,player2;
 
     public Board(){
         this.random =  new Random();
@@ -41,12 +38,13 @@ public class Board extends AbstractMinigame {
         this.winner = -1;
     }
 
-    public ArrayList<Player> getPlayers(){
+    public Iterable<Player> getPlayers(){
         return players;
-    };
-    public ArrayList<Pipe> getPipes(){
+    }
+
+    public Iterable<Pipe> getPipes(){
         return pipes;
-    };
+    }
 
     public int getWidth() {
         return width;
@@ -60,13 +58,6 @@ public class Board extends AbstractMinigame {
     }
     public void wPress(){
         player2.flap();
-    }
-
-    public void upRelease(){}
-    public void wRelease(){}
-
-    public int getWinner() {
-        return winner;
     }
 
     private boolean checkLanded(Player player){
@@ -88,6 +79,7 @@ public class Board extends AbstractMinigame {
 
         return false;
     }
+    @SuppressWarnings("InstanceMethodNamingConvention")
     private boolean check_x(Player player){
         Pipe pipe = pipes.get(0);
         if(width - pipe.getX() > 100 + player.getWidth() ||
@@ -98,6 +90,7 @@ public class Board extends AbstractMinigame {
         return false;
     }
 
+    @SuppressWarnings("InstanceMethodNamingConvention")
     private boolean check_y(Player player){
         Pipe pipe = pipes.get(0);
         if(pipe.getGapY() < player.getY() &&
@@ -152,7 +145,7 @@ public class Board extends AbstractMinigame {
             player.setSpeed(0);
             player.setY(height-player.getHeight());
             checkWinner();
-        };
+        }
 
     }
 
@@ -174,8 +167,8 @@ public class Board extends AbstractMinigame {
 
     public void resetBoard(){
         for (Player player : players) {
-            player.setY(0);
-            player.setSpeed(0);
+            player.setY(100);
+            player.setSpeed(-10);
             player.setAlive(true);
         }
         this.winner = -1;

@@ -6,11 +6,13 @@ import karataparty.Position;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 /**
  * Created by the karatekidz on 26/03/14.
  */
+
 public class Board extends AbstractMinigame
 {
 
@@ -18,8 +20,8 @@ public class Board extends AbstractMinigame
     private boolean[][] map;
     private int winner;
     private Random random;
-    private ArrayList<Player> players;
-    private Player player1,player2,player3,player4;
+    private List<Player> players;
+    private Player player1,player2;
 
 
     public Board() {
@@ -63,9 +65,11 @@ public class Board extends AbstractMinigame
 	return width;
     }
 
-    public boolean[][] getMap() {
-	return map;
-    }
+// --Commented out by Inspection START (2014-05-16 13:54):
+//    public boolean[][] getMap() {
+//	return map;
+//    }
+// --Commented out by Inspection STOP (2014-05-16 13:54)
 
     public boolean getMapPoint(Position position){
         if((int)position.getX()>=0 && (int)position.getX()<width &&
@@ -75,9 +79,9 @@ public class Board extends AbstractMinigame
         return true;
     }
 
-    public ArrayList<Player> getPlayers(){
+    public Iterable<Player> getPlayers(){
         return players;
-    };
+    }
 
     public void leftPress(){
 	    player1.setLeft(true);
@@ -139,8 +143,8 @@ public class Board extends AbstractMinigame
 	    return true;
     }
 
-    private ArrayList<Position> getCollidePoints(double x, double y, double angle){
-        ArrayList<Position> positions = new ArrayList<>();
+    private Iterable<Position> getCollidePoints(double x, double y, double angle){
+        List<Position> positions = new ArrayList<>();
         double a = Math.PI/39;
         for (int i = -20; i < 20; i++) {
             double xTemp = (Math.cos((a*i) + angle)*6) + x;

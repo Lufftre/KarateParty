@@ -14,10 +14,9 @@ public class PaintComponent extends AbstractComponent {
     private Board board;
 
     private Action upPress;
-    private Action upRelease;
+
 
     private Action wPress;
-    private Action wRelease;
 
     public PaintComponent(AbstractMinigame board){
         this.board = (Board)board;
@@ -29,13 +28,9 @@ public class PaintComponent extends AbstractComponent {
         //Up
         this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("pressed UP"), "pressedUp");
         this.getActionMap().put("pressedUp", this.upPress);
-        this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("released UP"), "releasedUp");
-        this.getActionMap().put("releasedUp", this.upRelease);
         //W
         this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("pressed W"), "pressedW");
         this.getActionMap().put("pressedW", this.wPress);
-        this.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("released W"), "releasedW");
-        this.getActionMap().put("releasedW", this.wRelease);
     }
 
     private void createActions(){
@@ -45,20 +40,10 @@ public class PaintComponent extends AbstractComponent {
                 board.upPress();
             }
         };
-        this.upRelease = new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                board.upRelease();
-            }
-        };
         //W
         this.wPress = new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
                 board.wPress();
-            }
-        };
-        this.wRelease = new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                board.wRelease();
             }
         };
     }
