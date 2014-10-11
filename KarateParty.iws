@@ -6,19 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3be05e89-6fcc-46cd-bbd1-4a815263a430" name="Default" comment="judojuking final">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/AbstractComponent.java" afterPath="$PROJECT_DIR$/src/karataparty/AbstractComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/judojuking/Board.java" afterPath="$PROJECT_DIR$/src/karataparty/judojuking/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/ninjaSnake/Board.java" afterPath="$PROJECT_DIR$/src/karataparty/ninjaSnake/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/sumoBird/Board.java" afterPath="$PROJECT_DIR$/src/karataparty/sumoBird/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KarateParty.ipr" afterPath="$PROJECT_DIR$/KarateParty.ipr" />
+    <list default="true" id="3be05e89-6fcc-46cd-bbd1-4a815263a430" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KarateParty.iws" afterPath="$PROJECT_DIR$/KarateParty.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/KarateParty.java" afterPath="$PROJECT_DIR$/src/karataparty/KarateParty.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/ninjaSnake/PaintComponent.java" afterPath="$PROJECT_DIR$/src/karataparty/ninjaSnake/PaintComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/sumoBird/PaintComponent.java" afterPath="$PROJECT_DIR$/src/karataparty/sumoBird/PaintComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/sumoBird/Pipe.java" afterPath="$PROJECT_DIR$/src/karataparty/sumoBird/Pipe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/ninjaSnake/Player.java" afterPath="$PROJECT_DIR$/src/karataparty/ninjaSnake/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/sumoBird/Player.java" afterPath="$PROJECT_DIR$/src/karataparty/sumoBird/Player.java" />
     </list>
     <ignored path="KarateParty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -788,7 +777,11 @@
       <created>1402032220825</created>
       <updated>1402032220825</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="judojuking final">
+      <created>1413029461366</created>
+      <updated>1413029461366</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -857,7 +850,8 @@
     <MESSAGE value="+Brief documentation" />
     <MESSAGE value="judojuking inc" />
     <MESSAGE value="judojuking" />
-    <option name="LAST_COMMIT_MESSAGE" value="judojuking" />
+    <MESSAGE value="judojuking final" />
+    <option name="LAST_COMMIT_MESSAGE" value="judojuking final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
