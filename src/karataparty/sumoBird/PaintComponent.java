@@ -1,4 +1,4 @@
-package karataparty.sumobird;
+package karataparty.sumoBird;
 
 import karataparty.AbstractComponent;
 import karataparty.AbstractMinigame;

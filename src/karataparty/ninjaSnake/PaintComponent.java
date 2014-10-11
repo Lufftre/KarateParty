@@ -1,4 +1,4 @@
-package karataparty.ninjasnake;
+package karataparty.ninjaSnake;
 
 import karataparty.AbstractComponent;
 import karataparty.AbstractMinigame;

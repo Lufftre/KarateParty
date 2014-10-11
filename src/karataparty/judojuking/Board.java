@@ -26,7 +26,7 @@ public class Board extends AbstractMinigame
     private int spawnCounter;
 
 
-    public Board() {
+    private Board() {
         this.random = new Random();
         this.height = 790;
         this.width = 790;
@@ -44,6 +44,14 @@ public class Board extends AbstractMinigame
         resetBoard();
 
     }
+
+    public static Board getBoardObject(){
+        if(ref == null)
+            ref = new Board();
+        return ref;
+    }
+    private static Board ref;
+
     private int randomPosX(){
         return random.nextInt(width -400)+200;
     }

@@ -2,7 +2,7 @@
  * Player Class for NinjaSnake
  *
  */
-package karataparty.ninjasnake;
+package karataparty.ninjaSnake;
 
 import karataparty.AbstractPlayer;
 import karataparty.Position;

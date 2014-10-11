@@ -1,4 +1,4 @@
-package karataparty.sumobird;
+package karataparty.sumoBird;
 
 import karataparty.AbstractComponent;
 import karataparty.AbstractMinigame;
@@ -21,7 +21,7 @@ public class Board extends AbstractMinigame {
     private int winner;
     private Player player1,player2;
 
-    public Board(){
+    private Board(){
         this.random =  new Random();
         this.players = new ArrayList<>();
         this.player1 = new Player(0);
@@ -37,6 +37,13 @@ public class Board extends AbstractMinigame {
         this.fallSpeed = 1;
         this.winner = -1;
     }
+
+    public static Board getBoardObject(){
+        if(ref == null)
+            ref = new Board();
+        return ref;
+    }
+    private static Board ref;
 
     public Iterable<Player> getPlayers(){
         return players;
@@ -79,7 +86,7 @@ public class Board extends AbstractMinigame {
 
         return false;
     }
-    @SuppressWarnings("InstanceMethodNamingConvention")
+
     private boolean check_x(Player player){
         Pipe pipe = pipes.get(0);
         if(width - pipe.getX() > 100 + player.getWidth() ||
@@ -90,7 +97,7 @@ public class Board extends AbstractMinigame {
         return false;
     }
 
-    @SuppressWarnings("InstanceMethodNamingConvention")
+
     private boolean check_y(Player player){
         Pipe pipe = pipes.get(0);
         if(pipe.getGapY() < player.getY() &&
@@ -174,6 +181,10 @@ public class Board extends AbstractMinigame {
         this.winner = -1;
         this.pipeCounter = 0;
         this.pipes = new ArrayList<>();
+    }
+
+    public String toString(){
+        return "Sumo Bird";
     }
 
 }

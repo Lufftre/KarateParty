@@ -1,6 +1,5 @@
 /**
  * Main class.
- * Administrational class.
  * Holds all Minigames + Metagame + MainMenu and makes the transitions between them.
  */
 package karataparty;
@@ -93,16 +92,16 @@ public class KarateParty {
 
 
         AbstractMinigame game;
-    ///*
-        game = new karataparty.ninjasnake.Board();
-        miniBoards.add(game);
-        miniComponents.add(new karataparty.ninjasnake.PaintComponent(game));
 
-        game = new karataparty.sumobird.Board();
+        game = karataparty.ninjaSnake.Board.getBoardObject();
         miniBoards.add(game);
-        miniComponents.add(new karataparty.sumobird.PaintComponent(game));
-     //*/
-        game = new karataparty.judojuking.Board();
+        miniComponents.add(new karataparty.ninjaSnake.PaintComponent(game));
+
+        game = karataparty.sumoBird.Board.getBoardObject();
+        miniBoards.add(game);
+        miniComponents.add(new karataparty.sumoBird.PaintComponent(game));
+
+        game = karataparty.judojuking.Board.getBoardObject();
         miniBoards.add(game);
         miniComponents.add(new karataparty.judojuking.PaintComponent(game));
     }

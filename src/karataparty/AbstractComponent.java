@@ -17,10 +17,8 @@ import java.util.Map;
  */
 public abstract class AbstractComponent extends JComponent{
 
-    // --Commented out by Inspection (2014-05-16 13:53):protected int tileSize;
     protected Map<Integer, Color> playerColorMap = null;
     protected Font myFont;
-    @SuppressWarnings({"InstanceVariableNamingConvention", "NonConstantFieldWithUpperCaseName"})
     protected int DIM_X,DIM_Y;
 
     protected AbstractComponent(){
@@ -39,7 +37,6 @@ public abstract class AbstractComponent extends JComponent{
         playerColorMap.put(1, Color.GREEN);
     }
 
-    @SuppressWarnings("RefusedBequest")
     public Dimension getPreferredSize(){
         /*
         int xsize = i*tileSize + 100;
@@ -49,7 +46,6 @@ public abstract class AbstractComponent extends JComponent{
         return new Dimension(DIM_X, DIM_Y);
     }
 
-    @SuppressWarnings("AbstractMethodOverridesConcreteMethod")
     protected abstract void paintComponent(Graphics g);
 
     public void boardChanged(){

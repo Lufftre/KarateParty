@@ -1,4 +1,4 @@
-package karataparty.sumobird;
+package karataparty.sumoBird;
 
 /**
  * Created by the karatekidz on 30/03/14.

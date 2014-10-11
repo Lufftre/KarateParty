@@ -1,4 +1,4 @@
-package karataparty.ninjasnake;
+package karataparty.ninjaSnake;
 
 import karataparty.AbstractComponent;
 import karataparty.AbstractMinigame;
@@ -24,7 +24,7 @@ public class Board extends AbstractMinigame
     private Player player1,player2;
 
 
-    public Board() {
+    private Board() {
         this.random = new Random();
         this.height = 790;
         this.width = 790;
@@ -38,6 +38,14 @@ public class Board extends AbstractMinigame
         resetBoard();
 
     }
+
+    public static Board getBoardObject(){
+        if(ref == null)
+            ref = new Board();
+        return ref;
+    }
+    private static Board ref;
+
     private int randomPosX(){
         return random.nextInt(width -400)+200;
     }
@@ -143,12 +151,13 @@ public class Board extends AbstractMinigame
 	    return true;
     }
 
+    //returns points in an arc in front of the snake
     private Iterable<Position> getCollidePoints(double x, double y, double angle){
         List<Position> positions = new ArrayList<>();
         double a = Math.PI/39;
         for (int i = -20; i < 20; i++) {
             double xTemp = (Math.cos((a*i) + angle)*6) + x;
-            double yTemp = (Math.sin((a * i) + angle)*6) + y;
+            double yTemp = (Math.sin((a*i) + angle)*6) + y;
             positions.add(new Position(xTemp,yTemp));
         }
         return positions;
@@ -211,5 +220,9 @@ public class Board extends AbstractMinigame
             player.moveX(x);
             player.moveY(y);
         }
+    }
+
+    public String toString(){
+        return "Ninja Snake";
     }
 }
