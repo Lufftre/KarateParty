@@ -7,7 +7,7 @@ package karataparty;
 /**
  * Created by the karatekidz on 26/03/14.
  */
-@SuppressWarnings("AbstractClassWithoutAbstractMethods")
+
 public abstract class AbstractPlayer {
     protected int number;
     public int getNumber() {

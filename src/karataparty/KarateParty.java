@@ -106,9 +106,6 @@ public class KarateParty {
         miniComponents.add(new karataparty.judojuking.PaintComponent(game));
     }
 
-    private void initRandomMiniGame(){
-        frame.remove(metaComponent);
-    }
 
     private void determineNextMiniGame(){
         int n = random.nextInt(miniBoards.size());
@@ -137,13 +134,30 @@ public class KarateParty {
         quit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int answer = JOptionPane.showConfirmDialog(frame, "Quit to Main Menu?","niggawhat?", JOptionPane.YES_NO_OPTION);
+                int answer = JOptionPane.showConfirmDialog(frame, "Quit to Main Menu?","=(", JOptionPane.YES_NO_OPTION);
                 if(answer == JOptionPane.YES_OPTION){goToMainMenu();}
             }
         });
     }
 
     private void goToMainMenu(){resetAll();mainMenu();}
+
+    private void resetAll(){
+        frame.setVisible(false);
+        createFrame();
+        metaComponent = null;
+        miniComponent = null;
+        metaBoard = null;
+        miniBoard = null;
+        timer.stop();
+        timer = null;
+        tick = null;
+        meta = false;
+        miniBoards = null;
+        miniComponents = null;
+        mainMenu = null;
+        mainMenuComponent = null;
+    }
 
     private void createMetaComponent(){
         metaComponent = new PaintComponent(this.metaBoard);
@@ -198,7 +212,7 @@ public class KarateParty {
 
                     if(metaBoard.tick(metaComponent)){ //Meta round done
                         meta = false;
-                        initRandomMiniGame();
+                        frame.remove(metaComponent);
                         sleep(1000);
                     }
                 } else {
@@ -221,22 +235,7 @@ public class KarateParty {
         };
     }
 
-    private void resetAll(){
-        frame.setVisible(false);
-        createFrame();
-        metaComponent = null;
-        miniComponent = null;
-        metaBoard = null;
-        miniBoard = null;
-        timer.stop();
-        timer = null;
-        tick = null;
-        meta = false;
-        miniBoards = null;
-        miniComponents = null;
-        mainMenu = null;
-        mainMenuComponent = null;
-    }
+
 
     public static void main(String[] args) {
         //noinspection ResultOfObjectAllocationIgnored

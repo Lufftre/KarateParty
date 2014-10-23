@@ -33,7 +33,7 @@ public class Board {
 
 
     public Board(int nPlayers) {
-        this.nRounds = 25;
+        this.nRounds = 15;
         this.currentRound = 0;
         this.size = 50;
         this.random = new Random();
@@ -90,11 +90,6 @@ public class Board {
 
     public void addRound(){ currentRound++;}
 
-    /*public void spacePress(){
-        roll = true;
-    }
-    */
-
     private void newKrystal(){
         krystal = random.nextInt(size);
     }
@@ -137,21 +132,6 @@ public class Board {
         //roll = false;
     }
 
-    private boolean isWinner(){
-        if(getCurrentPlayer().getKrystals()>=5){
-            return true;
-        }
-        return false;
-    }
-
-    private void winning(){
-        for (Player player : players) {
-            player.reset();
-        }
-        autoRoll = autoRollRate;
-        this.currentPlayer = 0;
-        //roll = false;
-    }
 
     public boolean tick(PaintComponent component){
         if (autoRoll != 0) {
@@ -161,9 +141,7 @@ public class Board {
             if (tickCount == 0){
                 tickCount = tickSpeed;
                 moveTick();
-                if (isWinner()) {
-                    winning();
-                }
+
                 component.boardChanged();
                 if (diceVal <= 0) {
                     postRoll();
