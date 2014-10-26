@@ -1,5 +1,5 @@
 /**
- * Abstract Player Class to be used in all Mini Games.
+ *  Player Class to be used in all Mini Games.
  * Contains a integer for playernumber.
  */
 package karataparty;
@@ -8,9 +8,10 @@ package karataparty;
  * Created by the karatekidz on 26/03/14.
  */
 
-public abstract class AbstractPlayer {
-    protected int number;
+public class SuperPlayer {
+    private int number;
     public int getNumber() {
         return number;
     }
+    protected void setNumber(int number){this.number = number;}
 }

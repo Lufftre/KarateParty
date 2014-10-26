@@ -26,6 +26,9 @@ import java.util.List;
 public class KarateParty {
     private JFrame frame;
 
+    private static final int DIM_X = 1000;
+    private static final int DIM_Y = 840;
+    private static final int TIMER_SPEED = 17;
     private PaintComponent metaComponent = null;
     private AbstractComponent miniComponent = null;
 
@@ -69,13 +72,12 @@ public class KarateParty {
         mainMenu = new MainMenu(this);
         Image image = null;
         try {
-            //noinspection HardcodedFileSeparator
-            image = ImageIO.read(new File("src/karataparty/mainmenu/meny.png"));
-        } catch (IOException ex){
-            //noinspection ThrowablePrintedToSystemOut
-            System.out.println(ex);
+            String fs = System.getProperty("file.separator");
+            String imagePath = "src" + fs + "karataparty" + fs + "mainmenu" + fs + "meny.png";
+            image = ImageIO.read(new File(imagePath));
+        } catch (IOException ignored){
         }
-        frame.setPreferredSize(new Dimension(1000,840));
+        frame.setPreferredSize(new Dimension(DIM_X, DIM_Y));
         mainMenuComponent = new MainMenuComponent(image);
         frame.add(mainMenu, BorderLayout.SOUTH);
         frame.add(mainMenuComponent);
@@ -93,13 +95,13 @@ public class KarateParty {
 
         AbstractMinigame game;
 
-        game = karataparty.ninjaSnake.Board.getBoardObject();
+        game = karataparty.ninjasnake.Board.getBoardObject();
         miniBoards.add(game);
-        miniComponents.add(new karataparty.ninjaSnake.PaintComponent(game));
+        miniComponents.add(new karataparty.ninjasnake.PaintComponent(game));
 
-        game = karataparty.sumoBird.Board.getBoardObject();
+        game = karataparty.sumobird.Board.getBoardObject();
         miniBoards.add(game);
-        miniComponents.add(new karataparty.sumoBird.PaintComponent(game));
+        miniComponents.add(new karataparty.sumobird.PaintComponent(game));
 
         game = karataparty.judojuking.Board.getBoardObject();
         miniBoards.add(game);
@@ -169,7 +171,6 @@ public class KarateParty {
 
     private void setMiniComponent(AbstractComponent component){
         this.miniComponent = component;
-        //frame.remove(metaComponent);
         frame.add(miniComponent);
 
         miniComponent.setPreferredSize(miniComponent.getPreferredSize());
@@ -186,7 +187,7 @@ public class KarateParty {
 
 
     private void createTimer(){
-        this.timer = new Timer(17, this.tick);
+        this.timer = new Timer(TIMER_SPEED, this.tick);
         timer.setCoalesce(true);
         timer.start();
     }
@@ -195,9 +196,7 @@ public class KarateParty {
     private void sleep(int n){
         try {
             Thread.sleep(n);
-        } catch(InterruptedException ex) {
-            //noinspection ThrowablePrintedToSystemOut
-            System.out.println(ex);
+        } catch(InterruptedException ignored) {
             Thread.currentThread().interrupt();
         }
     }
@@ -238,7 +237,6 @@ public class KarateParty {
 
 
     public static void main(String[] args) {
-        //noinspection ResultOfObjectAllocationIgnored
         new KarateParty();
     }
 }

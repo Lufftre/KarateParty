@@ -12,45 +12,40 @@ import java.util.Random;
 public class Board {
 
     private List<Player> players;
-    private int size;
+    private static final int SIZE = 50;
     private Random random;
 
     private int autoRoll;
-    private int autoRollRate;
+    private static final int AUTO_ROLL_RATE = 30;
     private int currentPlayer;
     private int diceVal;
+    private static final int DICE_MAX = 12;
 
     private int krystal;
-    private int krystalPrice;
+    private static final int KRYSTAL_PRICE = 50;
 
-    private int tickSpeed;
+    private static final int TICK_SPEED = 8;
     private int tickCount;
 
-    private final int nRounds;
+    private static final int N_ROUNDS = 15;
     private int currentRound;
 
-    private AbstractMinigame nextMiniGame;
+    private AbstractMinigame nextMiniGame = null;
 
 
     public Board(int nPlayers) {
-        this.nRounds = 15;
         this.currentRound = 0;
-        this.size = 50;
         this.random = new Random();
         players = new ArrayList<>();
         addPlayers(nPlayers);
 
         this.random = new Random();
-        //this.roll = false;
-        this.autoRollRate = 30;
-        this.autoRoll = autoRollRate;
+        this.autoRoll = AUTO_ROLL_RATE;
         this.currentPlayer = 0;
         this.diceVal = 0;
         newKrystal();
 
-        this.krystalPrice = 50;
-        this.tickSpeed = 8;
-        this.tickCount = tickSpeed;
+        this.tickCount = TICK_SPEED;
     }
 
     private void addPlayers(int n){
@@ -69,7 +64,7 @@ public class Board {
     }
 
     public int getSize() {
-        return size;
+        return SIZE;
     }
 
     public Player getCurrentPlayer(){
@@ -84,14 +79,14 @@ public class Board {
         return krystal;
     }
 
-    public int getnRounds(){ return nRounds; }
+    public int getnRounds(){ return N_ROUNDS; }
 
     public int getCurrentRound(){ return currentRound; }
 
     public void addRound(){ currentRound++;}
 
     private void newKrystal(){
-        krystal = random.nextInt(size);
+        krystal = random.nextInt(SIZE);
     }
 
     public void newRound(int nWinner){
@@ -102,10 +97,10 @@ public class Board {
     }
 
     private void tryBuyKrystal(){
-        if(getCurrentPlayer().getSteps()%size == krystal){
-            if(getCurrentPlayer().getKoins() >= krystalPrice){
+        if(getCurrentPlayer().getSteps()% SIZE == krystal){
+            if(getCurrentPlayer().getKoins() >= KRYSTAL_PRICE){
                 getCurrentPlayer().addKrystal();
-                getCurrentPlayer().removeKoins(krystalPrice);
+                getCurrentPlayer().removeKoins(KRYSTAL_PRICE);
                 newKrystal();
             }
         }
@@ -116,7 +111,7 @@ public class Board {
     }
 
     private void preRoll(){
-        diceVal = random.nextInt(12) + 1;
+        diceVal = random.nextInt(DICE_MAX) + 1;
         autoRoll--;
     }
 
@@ -128,7 +123,7 @@ public class Board {
 
     private void postRoll(){
         currentPlayer++;
-        autoRoll = autoRollRate;
+        autoRoll = AUTO_ROLL_RATE;
         //roll = false;
     }
 
@@ -139,7 +134,7 @@ public class Board {
             component.boardChanged();
         } else {
             if (tickCount == 0){
-                tickCount = tickSpeed;
+                tickCount = TICK_SPEED;
                 moveTick();
 
                 component.boardChanged();

@@ -10,27 +10,26 @@ import java.awt.*;
 public class PaintComponent extends AbstractComponent {
     private Board board;
     private final int boardWidth, boardHeight;
-    private final int scoreboardWidth;
     private final int centerPosX, centerPosY;
-    private final int playerSize = 20;
-    private final int krystalWidth = 15;
-    private final int krystalHeight = 25;
-    private final int leftColumnAlign = 180;
-    private final int rightColumnAlign = 80;
-    private final int rowSpacing = 100;
-    private final int headerAlign = 40;
-    private final int dieX = 10;
-    private final int dieY = 40;
-    private final int dieSize = 50;
-    private final int dieTextPos = 50;
-    private Graphics2D g2d;
+    private static final int PLAYER_SIZE = 20;
+    private static final int KRYSTAL_WIDTH = 15;
+    private static final int KRYSTAL_HEIGHT = 25;
+    private static final int LEFT_COLUMN_ALIGN = 180;
+    private static final int RIGHT_COLUMN_ALIGN = 80;
+    private static final int ROW_SPACING = 100;
+    private static final int HEADER_ALIGN = 40;
+    private static final int DIE_X = 40;
+    private static final int DIE_Y = 10;
+    private static final int DIE_SIZE = 50;
+    private static final int DIE_TEXT_POS = 50;
+    private static final int N_ROUNDS_Y_ALIGN = 100;
+    private Graphics2D g2d = null;
 
 
     public PaintComponent(Board board){
         this.board = board;
         this.boardWidth = 800;
         this.boardHeight = 800;
-        this.scoreboardWidth = 200;
 
         this.centerPosX = boardWidth/2;
         this.centerPosY = boardHeight/2;
@@ -63,7 +62,7 @@ public class PaintComponent extends AbstractComponent {
         int x = (int)(Math.cos(radians*board.getKrystal()) * radiusBig);
         int y = (int)(Math.sin(radians*board.getKrystal()) * radiusBig);
             g2d.setColor(Color.CYAN);
-        g2d.fillOval(x + ((boardWidth/2)-radiusSmall) + playerSize/2,y + ((boardHeight/2)-radiusSmall) + playerSize/2,krystalWidth,krystalHeight);
+        g2d.fillOval(x + ((boardWidth/2)-radiusSmall) + PLAYER_SIZE /2,y + ((boardHeight/2)-radiusSmall) + PLAYER_SIZE /2, KRYSTAL_WIDTH, KRYSTAL_HEIGHT);
         }
 
 
@@ -75,24 +74,24 @@ public class PaintComponent extends AbstractComponent {
             g2d.setColor(playerColorMap.get(player.getNumber()));
             int x = (int)(Math.cos(radians*player.getSteps()) * radiusBig);
             int y = (int)(Math.sin(radians*player.getSteps()) * radiusBig);
-            g2d.fillRect(x + ((boardWidth/2)-radiusSmall) + playerSize/2,y + ((boardHeight/2)-radiusSmall) + playerSize/2,playerSize,playerSize);
+            g2d.fillRect(x + ((boardWidth/2)-radiusSmall) + PLAYER_SIZE /2,y + ((boardHeight/2)-radiusSmall) + PLAYER_SIZE /2, PLAYER_SIZE, PLAYER_SIZE);
             //Draw Score
-            g2d.drawString(String.valueOf(player.getName()),getWidth()-leftColumnAlign ,rowSpacing*(1+player.getNumber()) - headerAlign);
+            g2d.drawString(String.valueOf(player.getName()),getWidth()- LEFT_COLUMN_ALIGN, ROW_SPACING *(1+player.getNumber()) - HEADER_ALIGN);
             g2d.setColor(Color.RED);
-            g2d.drawString(String.valueOf(player.getKoins()),getWidth()-leftColumnAlign ,rowSpacing*(1+player.getNumber()));
-            g2d.drawString(String.valueOf(player.getKrystals()),getWidth()-rightColumnAlign ,rowSpacing*(1+player.getNumber()));
+            g2d.drawString(String.valueOf(player.getKoins()),getWidth()- LEFT_COLUMN_ALIGN, ROW_SPACING *(1+player.getNumber()));
+            g2d.drawString(String.valueOf(player.getKrystals()),getWidth()- RIGHT_COLUMN_ALIGN, ROW_SPACING *(1+player.getNumber()));
 
         }
         //Draw Die
         g2d.setColor(Color.WHITE);
-        g2d.drawRect(dieX,dieY,dieSize,dieSize);
-        g2d.drawString(String.valueOf(board.getDiceVal()), dieTextPos,dieTextPos);
+        g2d.drawRect(DIE_X, DIE_Y, DIE_SIZE, DIE_SIZE);
+        g2d.drawString(String.valueOf(board.getDiceVal()), DIE_TEXT_POS, DIE_TEXT_POS);
 
         //Draw round number
         g2d.setColor(Color.RED);
         g2d.drawString(String.valueOf(board.getnRounds() - board.getCurrentRound()), centerPosX,centerPosY);
         g2d.setColor(Color.WHITE);
-        g2d.drawString(board.getNextMiniGame().toString(),centerPosX,centerPosY+100);
+        g2d.drawString(board.getNextMiniGame().toString(),centerPosX,centerPosY+ N_ROUNDS_Y_ALIGN);
 
     }
 }

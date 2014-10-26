@@ -57,9 +57,4 @@ public class Player {
         this.steps++;
     }
 
-    public void reset(){
-        this.steps = 0;
-        this.koins = 0;
-        this.krystals = 0;
-    }
 }

@@ -4,34 +4,31 @@
  */
 package karataparty.judojuking;
 
-import karataparty.AbstractPlayer;
 import karataparty.Position;
+import karataparty.SuperPlayer;
 
 /**
  * Created by the karatekidz on 26/03/14.
  */
-public class Player extends AbstractPlayer{
+public class Player extends SuperPlayer {
     private Position position;
     private boolean alive;
-    private int size;
+    private static final int SIZE = 20;
     private boolean left, right, up, down;
-    private double speed;
+    private static final double SPEED = 2;
     private double speedX, speedY;
-    private double friction;
+    private static final double FRICTION = 1.2;
 
     public Player(int playerNumber) {
-        this.number = playerNumber;
+        setNumber(playerNumber);
         this.position = new Position(0,0);
         this.alive = true;
         this.left = false;
         this.right = false;
         this.up = false;
         this.down = false;
-        this.speed = 2;
         this.speedX = 0;
         this.speedY = 0;
-        this.friction = 1.2;
-        this.size = 20;
     }
 
 
@@ -44,32 +41,12 @@ public class Player extends AbstractPlayer{
         return position.getY();
     }
 
-    public double getSpeed() {
-        return speed;
-    }
-
     public boolean isAlive() {
         return alive;
     }
 
-    public boolean isLeft() {
-	return left;
-    }
-
-    public boolean isRight() {
-	return right;
-    }
-
     public int getSize() {
-        return size;
-    }
-
-    public boolean isUp() {
-        return up;
-    }
-
-    public boolean isDown() {
-        return down;
+        return SIZE;
     }
 
     public double getSpeedX() {
@@ -78,10 +55,6 @@ public class Player extends AbstractPlayer{
 
     public double getSpeedY() {
         return speedY;
-    }
-
-    public double getFriction() {
-        return friction;
     }
 
     public void setX(double x) {
@@ -100,16 +73,12 @@ public class Player extends AbstractPlayer{
 	this.right = right;
     }
 
-    public void setUp(boolean up) {
+    public void setUp(final boolean up) {
         this.up = up;
     }
 
-    public void setDown(boolean down) {
+    public void setDown(final boolean down) {
         this.down = down;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
     }
 
     public void setSpeedX(double speedX) {
@@ -120,10 +89,6 @@ public class Player extends AbstractPlayer{
         this.speedY = speedY;
     }
 
-    public void setFriction(int friction) {
-        this.friction = friction;
-    }
-
     public void moveX(double x){
         this.setX(this.position.getX() + x);
     }
@@ -131,22 +96,24 @@ public class Player extends AbstractPlayer{
         this.setY(this.position.getY() + y);
     }
 
-    public void addSpeedX(double x){this.setSpeedX(this.speedX + x);}
-    public void addSpeedY(double y){this.setSpeedY(this.speedY + y);}
+    public void addSpeedX(double x){
+        this.speedX += x;}
+    public void addSpeedY(double y){
+        this.speedY += y;}
 
     public void invertXspeed(){speedX*=-1;}
     public void invertYspeed(){speedY*=-1;}
 
     public void tick(){
-        if(this.left){speedX-=speed;}
-        if(this.right){speedX+=speed;}
-        if(this.up){speedY-=speed;}
-        if(this.down){speedY+=speed;}
+        if(this.left){speedX-= SPEED;}
+        if(this.right){speedX+= SPEED;}
+        if(this.up){speedY-= SPEED;}
+        if(this.down){speedY+= SPEED;}
         moveX(speedX);
         moveY(speedY);
 
-        speedX /= friction;
-        speedY /= friction;
+        speedX /= FRICTION;
+        speedY /= FRICTION;
     }
 
     public void setAlive(boolean alive) {

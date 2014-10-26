@@ -9,24 +9,17 @@ import java.util.List;
  */
 public class Enemy {
     private Position position;
-    private boolean alive;
-    private int size;
-    private double speed;
+    private static final int SIZE = 20;
+    private static final double SPEED = 1.5;
     private double speedX, speedY;
-    private double friction;
-    private int target;
+    private static final double FRICTION = 1.04;
     private double targetAngle;
 
     public Enemy(Position position) {
         this.position = position;
-        this.alive = true;
-        this.speed = 1.5;
         this.speedX = 0;
         this.speedY = 0;
-        this.friction = 1.04;
-        this.target = 0;
         this.targetAngle = 0;
-        this.size = 20;
     }
 
     public double getX() {
@@ -42,7 +35,7 @@ public class Enemy {
         this.position.setY(y);
     }
     public int getSize() {
-        return size;
+        return SIZE;
     }
 
     private double getDistance(Player player){
@@ -61,28 +54,27 @@ public class Enemy {
     public void tick(List<Player> players){
         double dist = 0;
         for (Player player : players) {
-            if(player.getX()>getX()-player.getSize() && player.getX()<getX()+getSize()){
-            if(player.getY()>getY()-player.getSize() && player.getY()<getY()+getSize()){
+            if(player.getX()>getX()-player.getSize() && player.getX()<getX()+ SIZE){
+            if(player.getY()>getY()-player.getSize() && player.getY()<getY()+ SIZE){
                 player.setAlive(false);
                 }
             }
             if(player.isAlive()) {
                 if (getDistance(player) < dist || dist == 0) {
                     dist = getDistance(player);
-                    target = player.getNumber();
                     targetAngle = getTargetAngle(player);
                 }
             }
         }
 
-        speedX += (Math.cos(targetAngle)*speed);
-        speedY += (Math.sin(targetAngle)*speed);
+        speedX += (Math.cos(targetAngle)* SPEED);
+        speedY += (Math.sin(targetAngle)* SPEED);
 
         moveX(speedX);
         moveY(speedY);
 
-        speedX /= friction;
-        speedY /= friction;
+        speedX /= FRICTION;
+        speedY /= FRICTION;
 
     }
 }

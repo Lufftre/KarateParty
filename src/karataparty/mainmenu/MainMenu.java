@@ -18,11 +18,12 @@ public class MainMenu extends JPanel implements ActionListener {
     protected JButton buttonStart, buttonQuit;
     protected JPanel panel;
     protected KarateParty karateParty;
+    private static final int PANEL_SIZE = 200;
 
     //Takes KarateParty object for startGame press.
     public MainMenu(KarateParty kp){
         panel = new JPanel(new GridLayout(0, 1));
-        panel.setPreferredSize(new Dimension(200,200));
+        panel.setPreferredSize(new Dimension(PANEL_SIZE, PANEL_SIZE));
         buttonStart = new JButton("Karate Time!");
         buttonStart.setActionCommand("start");
         buttonQuit = new JButton("Quit");

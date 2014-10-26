@@ -177,7 +177,7 @@ public class PaintComponent extends AbstractComponent {
     public void paintComponent(Graphics g){
         final Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(Color.BLACK);
-        g2d.fillRect(0,0,800,800);
+        g2d.fillRect(0,0,board.getWidth(),board.getHeight());
 
         for (Player player : board.getPlayers()) {
             if(player.isAlive()){

@@ -16,20 +16,22 @@ import java.util.Random;
 public class Board extends AbstractMinigame
 {
 
-    private int height,width;
+    private static final int HEIGHT = 790;
+    private static final int WIDTH = 790;
     private int winner;
     private Random random;
     private List<Player> players;
     private List<Enemy> enemies;
     private Player player1,player2;
-    private final int spawnDelay;
+    private static final int SPAWN_DELAY = 500;
+    private static final int FIRST_SPAWN_DELAY = 100;
     private int spawnCounter;
+    private static final double BUMP_PUSH = 0.95;
+    private static final double BUMP_SLOW = 0.25;
 
 
     private Board() {
         this.random = new Random();
-        this.height = 790;
-        this.width = 790;
 
         this.players = new ArrayList<>();
         this.player1 = new Player(0);
@@ -39,24 +41,24 @@ public class Board extends AbstractMinigame
 
         this.enemies = new ArrayList<>();
         enemies.add(new Enemy(new Position(0,0)));
-        this.spawnDelay = 500;
-        this.spawnCounter = 100;
+        this.spawnCounter = FIRST_SPAWN_DELAY;
         resetBoard();
 
     }
 
-    public static Board getBoardObject(){
-        if(ref == null)
-            ref = new Board();
-        return ref;
+    private static final class BoardHolder {
+        private static final Board SINGLETON_REF = new Board();
     }
-    private static Board ref;
+
+    public static Board getBoardObject(){
+        return BoardHolder.SINGLETON_REF;
+    }
 
     private int randomPosX(){
-        return random.nextInt(width -400)+200;
+        return random.nextInt(WIDTH /2)+ WIDTH /4;
     }
     private int randomPosY(){
-        return random.nextInt(height -400)+200;
+        return random.nextInt(HEIGHT /2)+ HEIGHT /4;
     }
     public void resetBoard(){
         for (Player player : players) {
@@ -69,15 +71,15 @@ public class Board extends AbstractMinigame
             player.setDown(false);
         }
         this.enemies = new ArrayList<>();
-        this.spawnCounter = 100;
+        this.spawnCounter = FIRST_SPAWN_DELAY;
         this.winner = -1;
     }
 
     public int getHeight() {
-	return height;
+	return HEIGHT;
     }
     public int getWidth() {
-	return width;
+	return WIDTH;
     }
 
 
@@ -140,10 +142,6 @@ public class Board extends AbstractMinigame
     }
 
 
-
-    private void killPlayer(Player player){
-	    player.setAlive(false);
-    }
     private void checkWinner(){
         int n = 0;
         int winnerTemp = -1;
@@ -166,7 +164,7 @@ public class Board extends AbstractMinigame
         }
         spawnCounter--;
         if(spawnCounter == 0){
-            spawnCounter = spawnDelay;
+            spawnCounter = SPAWN_DELAY;
             enemies.add(new Enemy(new Position(0,0)));
         }
         Collections.shuffle(players);
@@ -194,18 +192,18 @@ public class Board extends AbstractMinigame
         if(player.getX()<0){
             player.invertXspeed();
             player.setX(0);
-        }else if(player.getX()>width-10){
+        }else if(player.getX()> WIDTH -(player.getSize())){
             player.invertXspeed();
-            player.setX(width-10);
+            player.setX(WIDTH -(player.getSize()));
         }
 
         if(player.getY()<0){
             player.invertYspeed();
             player.setY(0);
         }
-        if(player.getY()>height-10){
+        if(player.getY()> HEIGHT -(player.getSize())){
             player.invertYspeed();
-            player.setY(height-10);
+            player.setY(HEIGHT -(player.getSize()));
         }
     }
 
@@ -214,10 +212,10 @@ public class Board extends AbstractMinigame
             if(p.getNumber()!=player.getNumber()){
                 if(p.getX()>player.getX()-p.getSize() && p.getX()<player.getX()+player.getSize()){
                     if(p.getY()>player.getY()-p.getSize() && p.getY()<player.getY()+player.getSize()){
-                        p.addSpeedX(player.getSpeedX()*0.95);
-                        p.addSpeedY(player.getSpeedY()*0.95);
-                        player.setSpeedX(player.getSpeedX()*0.25);
-                        player.setSpeedY(player.getSpeedY()*0.25);
+                        p.addSpeedX(player.getSpeedX()* BUMP_PUSH);
+                        p.addSpeedY(player.getSpeedY()* BUMP_PUSH);
+                        player.setSpeedX(player.getSpeedX()* BUMP_SLOW);
+                        player.setSpeedY(player.getSpeedY()* BUMP_SLOW);
 
                     }
                 }

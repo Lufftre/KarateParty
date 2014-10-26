@@ -19,14 +19,14 @@ public abstract class AbstractComponent extends JComponent{
 
     protected Map<Integer, Color> playerColorMap = null;
     protected Font myFont;
-    protected int DIM_X = 1000;
-    protected int DIM_Y = 800;
+    protected static final int DIMX = 1000;
+    protected static final int DIMY = 800;
+    protected static final int FONTSIZE = 30;
 
     protected AbstractComponent(){
-        //this.tileSize = 80;
         createHashMap();
         this.setBackground(Color.BLACK);
-        myFont = new Font("Arial", Font.BOLD,30);
+        myFont = new Font("Arial", Font.BOLD, FONTSIZE);
 
     }
 
@@ -36,11 +36,10 @@ public abstract class AbstractComponent extends JComponent{
         playerColorMap.put(1, Color.GREEN);
     }
 
+    @Override
     public Dimension getPreferredSize(){
-        return new Dimension(DIM_X, DIM_Y);
+        return new Dimension(DIMX, DIMY);
     }
-
-    protected abstract void paintComponent(Graphics g);
 
     public void boardChanged(){
         repaint();
