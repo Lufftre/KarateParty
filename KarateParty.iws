@@ -7,18 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3be05e89-6fcc-46cd-bbd1-4a815263a430" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\Ludvig\KarateParty\src\karataparty\AbstractPlayer.java" afterPath="$PROJECT_DIR$/src/karataparty/SuperPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/AbstractComponent.java" afterPath="$PROJECT_DIR$/src/karataparty/AbstractComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/judojuking/Board.java" afterPath="$PROJECT_DIR$/src/karataparty/judojuking/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/metagame/Board.java" afterPath="$PROJECT_DIR$/src/karataparty/metagame/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/judojuking/Enemy.java" afterPath="$PROJECT_DIR$/src/karataparty/judojuking/Enemy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KarateParty.iws" afterPath="$PROJECT_DIR$/KarateParty.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/KarateParty.java" afterPath="$PROJECT_DIR$/src/karataparty/KarateParty.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/mainmenu/MainMenu.java" afterPath="$PROJECT_DIR$/src/karataparty/mainmenu/MainMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/judojuking/PaintComponent.java" afterPath="$PROJECT_DIR$/src/karataparty/judojuking/PaintComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/metagame/PaintComponent.java" afterPath="$PROJECT_DIR$/src/karataparty/metagame/PaintComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/judojuking/Player.java" afterPath="$PROJECT_DIR$/src/karataparty/judojuking/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/karataparty/metagame/Player.java" afterPath="$PROJECT_DIR$/src/karataparty/metagame/Player.java" />
     </list>
     <ignored path="KarateParty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -818,7 +807,11 @@
       <created>1414107514668</created>
       <updated>1414107514668</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Final Version">
+      <created>1414336871645</created>
+      <updated>1414336871645</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
